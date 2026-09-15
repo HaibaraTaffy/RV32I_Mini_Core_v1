@@ -1,5 +1,4 @@
 // RV32I Mini Core - Program Counter Register
-// TODO: Define the interface and implement PC state updates.
 
 //                  ┌───────────────┐
 //                  │               │
@@ -17,9 +16,10 @@ module pc_reg #(
     output reg [31:0]   pc
 );
 
-always @(posedge clk) begin
+always @(posedge clk) begin//上升沿才写入
     if(rst)
         pc <= RESET_VECTOR;//复位(更高优先级)时 存入复位向量
     else
         pc <= next_pc;     //正常情况 存入next_pc
 end
+endmodule

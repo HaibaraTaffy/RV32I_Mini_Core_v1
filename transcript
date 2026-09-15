@@ -12,23 +12,16 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -gui -voptargs="+acc" work.tb_regfile 
-# Start time: 16:49:05 on Sep 15,2026
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_regfile(fast)
-# Loading work.regfile(fast)
-# Trace back: Error QStructure::sort: invalid command name ""
-#   <6:E:/mtitcl/vsim/qstructure.tc_:2478: ::QStructure::sort .main_pane.structure 0 ascending
-#   <5:eval:1: ::QStructure::structsort .main_pane.structure 0 ascending
-#   <4:eval:1: ::namespace inscope ::QStructure {structsort .main_pane.structure} 0 ascending
-#   >3:proc:26: ::.main_pane.structure.interior.cs.body.struct sort 0 ascending
-#   >2:proc:10: ::.main_pane.structure.interior.cs.body.struct _initializeSortColumn
-#   <1:eval:1: ::namespace inscope ::vsimwidgets::Hierarchy {::.main_pane.structure.interior.cs.body.struct _initializeSortColumn}
+# vsim -gui -voptargs="+acc" work.tb_imm_gen 
+# Start time: 21:22:45 on Sep 15,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.tb_imm_gen(fast)
+# Loading work.imm_gen(fast)
 view -new wave
 # .main_pane.wave.interior.cs.body.pw.wf
-add wave -position insertpoint sim:/tb_regfile/*
+add wave -position insertpoint sim:/tb_imm_gen/*
 run
-# ** Note: $finish    : tb/tb_regfile.v(77)
-#    Time: 90 ns  Iteration: 0  Instance: /tb_regfile
+# ** Note: $finish    : tb/tb_imm_gen.v(48)
+#    Time: 80 ns  Iteration: 0  Instance: /tb_imm_gen
 # 1
-# Break in Module tb_regfile at tb/tb_regfile.v line 77
+# Break in Module tb_imm_gen at tb/tb_imm_gen.v line 48

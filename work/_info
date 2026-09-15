@@ -18,16 +18,16 @@ Z1 o-quiet -auto_acc_if_foreign -work work +acc
 Z2 tCvgOpt 0
 n@_opt
 Z3 OL;O;2020.4;71
+R0
 T_opt1
-!s110 1789458671
-V0miB_O2[zRYPj803Rl^CK1
-04 9 4 work tb_pc_reg fast 0
-=1-3043d7ebc996-6aa8f8ef-197-1a64
+!s110 1789478566
+VN7>;VUiJA>m]lV6>jKO>c1
+04 10 4 work tb_imm_gen fast 0
+=1-3043d7ebc996-6aa946a6-a4-d2c
 R1
 R2
 n@_opt1
 R3
-R0
 T_opt2
 !s110 1789459878
 VE=J:;J:lb`nBeh7]4[Y4W3
@@ -61,8 +61,31 @@ Z10 !s90 rtl/alu.v|tb/tb_alu.v|
 !i113 0
 Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
+vimm_gen
+Z12 !s110 1789478543
+!i10b 1
+!s100 ;^]>HiHbaF5;jh9DAX1fY1
+R5
+IYhF0AWTKkUEmU5VITA:Y@1
+R0
+w1789478540
+8rtl/imm_gen.v
+Frtl/imm_gen.v
+!i122 12
+L0 20 46
+R6
+R7
+r1
+!s85 0
+31
+Z13 !s108 1789478543.000000
+Z14 !s107 tb/tb_imm_gen.v|rtl/imm_gen.v|
+Z15 !s90 rtl/imm_gen.v|tb/tb_imm_gen.v|
+!i113 0
+R11
+R2
 vpc_reg
-Z12 !s110 1789458877
+Z16 !s110 1789458877
 !i10b 1
 !s100 =@ZMSeR[nXbzl_:C=L=X=3
 R5
@@ -78,14 +101,14 @@ R7
 r1
 !s85 0
 31
-Z13 !s108 1789458877.000000
-Z14 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
-Z15 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
+Z17 !s108 1789458877.000000
+Z18 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
+Z19 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
 !i113 0
 R11
 R2
 vregfile
-Z16 !s110 1789462134
+Z20 !s110 1789462134
 !i10b 1
 !s100 o64G;ReiH7GeNO;Ge7AP^1
 R5
@@ -101,9 +124,9 @@ R7
 r1
 !s85 0
 31
-Z17 !s108 1789462134.000000
-Z18 !s107 tb/tb_regfile.v|rtl/regfile.v|
-Z19 !s90 rtl/regfile.v|tb/tb_regfile.v|
+Z21 !s108 1789462134.000000
+Z22 !s107 tb/tb_regfile.v|rtl/regfile.v|
+Z23 !s90 rtl/regfile.v|tb/tb_regfile.v|
 !i113 0
 R11
 R2
@@ -130,8 +153,31 @@ R10
 !i113 0
 R11
 R2
-vtb_pc_reg
+vtb_imm_gen
 R12
+!i10b 1
+!s100 k`?Ya0ZUTL=DUbf:XRa:I2
+R5
+IcznaAX2XbiaVAG;h4WHVe1
+R0
+w1789478213
+8tb/tb_imm_gen.v
+Ftb/tb_imm_gen.v
+!i122 12
+L0 3 49
+R6
+R7
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R11
+R2
+vtb_pc_reg
+R16
 !i10b 1
 !s100 BzDWH;m`OaXik29H`6i2S1
 R5
@@ -147,14 +193,14 @@ R7
 r1
 !s85 0
 31
-R13
-R14
-R15
+R17
+R18
+R19
 !i113 0
 R11
 R2
 vtb_regfile
-R16
+R20
 !i10b 1
 !s100 :_4?h[jBU4>oH6W7jOJcN3
 R5
@@ -170,9 +216,9 @@ R7
 r1
 !s85 0
 31
-R17
-R18
-R19
+R21
+R22
+R23
 !i113 0
 R11
 R2

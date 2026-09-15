@@ -1,0 +1,33 @@
+# Simulation outputs
+sim/*.vcd
+sim/*.fst
+sim/*.lxt
+sim/*.log
+sim/*.out
+sim/*.wlf
+sim/work/
+sim/xsim.dir/
+sim/modelsim/*
+!sim/modelsim/.gitkeep
+
+# FPGA/tool generated files
+*.jou
+*.str
+*.dcp
+*.bit
+*.bin
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+db/
+incremental_db/
+output_files/
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+.DS_Store

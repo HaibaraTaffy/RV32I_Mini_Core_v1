@@ -12,74 +12,25 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -gui -voptargs="+acc" work.tb_pc_reg -do "add wave -r sim:/tb_pc_reg/*; run -all" 
-# Start time: 15:54:43 on Sep 15,2026
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_pc_reg(fast)
-# Loading work.pc_reg(fast)
-# add wave -r sim:/tb_pc_reg/*
-#  run -all
-# [PASS] time=6000 pc=00000000
-# [PASS] time=16000 pc=00000004
-# [PASS] time=26000 pc=00000008
-# [PASS] time=36000 pc=00000000
-# [PASS] time=46000 pc=00000100
-# [PASS] all PC register tests completed
-# ** Note: $finish    : tb/tb_pc_reg.v(91)
-#    Time: 46 ns  Iteration: 0  Instance: /tb_pc_reg
+# vsim -gui -voptargs="+acc" work.tb_alu 
+# Start time: 16:11:17 on Sep 15,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.tb_alu(fast)
+# Loading work.alu(fast)
+view -new wave
+# .main_pane.wave.interior.cs.body.pw.wf
+add wave -position insertpoint sim:/tb_alu/*
+run
+run
+run
+run
+run
+run
+run
+run
+# ** Note: $finish    : tb/tb_alu.v(56)
+#    Time: 80 ns  Iteration: 0  Instance: /tb_alu
 # 1
-# Break in Module tb_pc_reg at tb/tb_pc_reg.v line 91
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# Causality operation skipped due to absence of debug database file
-# End time: 15:56:39 on Sep 15,2026, Elapsed time: 0:01:56
+# Break in Module tb_alu at tb/tb_alu.v line 56
+# End time: 16:13:46 on Sep 15,2026, Elapsed time: 0:02:29
 # Errors: 0, Warnings: 0

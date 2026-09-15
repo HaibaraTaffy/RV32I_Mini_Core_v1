@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`timescale 1ns/1ps
+
 
 module tb_regfile;
 
@@ -66,6 +66,12 @@ initial begin
     #10;
 
     write_enable = 1'b0;
+    #10;
+
+    write_enable = 1'b0;
+    write_addr   = 5'd2;
+    write_data   = 32'hDEAD_BEEF;
+    read_addr1   = 5'd2;
     #10;
 
     $finish;

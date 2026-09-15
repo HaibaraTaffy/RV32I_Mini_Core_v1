@@ -10,10 +10,10 @@ z2
 cModel Technology
 Z0 dD:/all_project_file/Verilog_File/RV32I_Mini_Core_v1
 T_opt
-!s110 1789461835
-VZF^M0AoZLSP1`;?>^RO<42
+!s110 1789462146
+V3i3ho;gjZ;MQW^P4@EiN>3
 04 10 4 work tb_regfile fast 0
-=1-3043d7ebc996-6aa9054b-127-6298
+=1-3043d7ebc996-6aa90681-329-6e98
 Z1 o-quiet -auto_acc_if_foreign -work work +acc
 Z2 tCvgOpt 0
 n@_opt
@@ -85,23 +85,23 @@ Z15 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
 R11
 R2
 vregfile
-Z16 !s110 1789461819
+Z16 !s110 1789462134
 !i10b 1
 !s100 o64G;ReiH7GeNO;Ge7AP^1
 R5
 I0N?;Q5fQ;j4XZ5?ZW6WTD0
 R0
-w1789461476
+w1789462061
 8rtl/regfile.v
 Frtl/regfile.v
-!i122 8
+!i122 10
 L0 13 28
 R6
 R7
 r1
 !s85 0
 31
-Z17 !s108 1789461819.000000
+Z17 !s108 1789462134.000000
 Z18 !s107 tb/tb_regfile.v|rtl/regfile.v|
 Z19 !s90 rtl/regfile.v|tb/tb_regfile.v|
 !i113 0
@@ -156,15 +156,15 @@ R2
 vtb_regfile
 R16
 !i10b 1
-!s100 J;0T1<6fkZ3Sek`U^O@iI2
+!s100 :_4?h[jBU4>oH6W7jOJcN3
 R5
-IRd>F4?OFPYV6ER]@0jIOj2
+IiOS;2eCBoT3FKFzf9ogGl0
 R0
-w1789461812
+w1789462111
 8tb/tb_regfile.v
 Ftb/tb_regfile.v
-!i122 8
-L0 4 71
+!i122 10
+L0 4 77
 R6
 R7
 r1

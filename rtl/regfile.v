@@ -2,12 +2,12 @@
 
 //read_addr1 = rs1 = Register Index
 //read_addr2 = rs2 = Register Index
-//write_addr = rd  = Register Index return zero.
+//write_addr = rd  = Destination Register Index.
 //read_data1 = RF[read_addr1]
 //read_data2 = RF[read_addr2]
 
 //组合读取 时钟沿写入
-//x0 特殊 永远为0
+//x0 特殊 读取返回0 写入被忽略
 //先不管复位
 
 module regfile(

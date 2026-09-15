@@ -10,21 +10,20 @@ z2
 cModel Technology
 Z0 dD:/all_project_file/Verilog_File/RV32I_Mini_Core_v1
 T_opt
-!s110 1789458298
-Vd@UI=dX6771OSYB_9]DiX1
-Z1 04 9 4 work tb_pc_reg fast 0
-=1-3043d7ebc996-6aa8f778-35b-5b84
-o-quiet -auto_acc_if_foreign -work work
+!s110 1789461835
+VZF^M0AoZLSP1`;?>^RO<42
+04 10 4 work tb_regfile fast 0
+=1-3043d7ebc996-6aa9054b-127-6298
+Z1 o-quiet -auto_acc_if_foreign -work work +acc
 Z2 tCvgOpt 0
 n@_opt
 Z3 OL;O;2020.4;71
-R0
 T_opt1
 !s110 1789458671
 V0miB_O2[zRYPj803Rl^CK1
-R1
+04 9 4 work tb_pc_reg fast 0
 =1-3043d7ebc996-6aa8f8ef-197-1a64
-Z4 o-quiet -auto_acc_if_foreign -work work +acc
+R1
 R2
 n@_opt1
 R3
@@ -34,15 +33,16 @@ T_opt2
 VE=J:;J:lb`nBeh7]4[Y4W3
 04 6 4 work tb_alu fast 0
 =1-3043d7ebc996-6aa8fda5-2b3-6c40
-R4
+R1
 R2
 n@_opt2
 R3
+R0
 valu
-Z5 !s110 1789459859
+Z4 !s110 1789459859
 !i10b 1
 !s100 e;AO>7HlAYV:]djfI_d]P2
-Z6 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IN[QbYHOj8F7mPZ>IAaLMS3
 R0
 w1789459828
@@ -50,22 +50,22 @@ w1789459828
 Frtl/alu.v
 !i122 7
 L0 10 30
-Z7 VDg1SIo80bB@j0V0VzS_@n1
-Z8 OL;L;2020.4;71
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2020.4;71
 r1
 !s85 0
 31
-Z9 !s108 1789459859.000000
-Z10 !s107 tb/tb_alu.v|rtl/alu.v|
-Z11 !s90 rtl/alu.v|tb/tb_alu.v|
+Z8 !s108 1789459859.000000
+Z9 !s107 tb/tb_alu.v|rtl/alu.v|
+Z10 !s90 rtl/alu.v|tb/tb_alu.v|
 !i113 0
-Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vpc_reg
-Z13 !s110 1789458877
+Z12 !s110 1789458877
 !i10b 1
 !s100 =@ZMSeR[nXbzl_:C=L=X=3
-R6
+R5
 I=6[86k[Yc7R>HlzR7:im71
 R0
 w1789457551
@@ -73,22 +73,45 @@ w1789457551
 Frtl/pc_reg.v
 !i122 6
 L0 10 16
+R6
 R7
-R8
 r1
 !s85 0
 31
-Z14 !s108 1789458877.000000
-Z15 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
-Z16 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
+Z13 !s108 1789458877.000000
+Z14 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
+Z15 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
 !i113 0
-R12
+R11
+R2
+vregfile
+Z16 !s110 1789461819
+!i10b 1
+!s100 o64G;ReiH7GeNO;Ge7AP^1
+R5
+I0N?;Q5fQ;j4XZ5?ZW6WTD0
+R0
+w1789461476
+8rtl/regfile.v
+Frtl/regfile.v
+!i122 8
+L0 13 28
+R6
+R7
+r1
+!s85 0
+31
+Z17 !s108 1789461819.000000
+Z18 !s107 tb/tb_regfile.v|rtl/regfile.v|
+Z19 !s90 rtl/regfile.v|tb/tb_regfile.v|
+!i113 0
+R11
 R2
 vtb_alu
-R5
+R4
 !i10b 1
 !s100 BRieUjeM^XEF98JEn<7YJ0
-R6
+R5
 IC>5DUTb^FDWATTV^jk?U<2
 R0
 w1789459850
@@ -96,22 +119,22 @@ w1789459850
 Ftb/tb_alu.v
 !i122 7
 L0 5 55
+R6
 R7
-R8
 r1
 !s85 0
 31
+R8
 R9
 R10
-R11
 !i113 0
-R12
+R11
 R2
 vtb_pc_reg
-R13
+R12
 !i10b 1
 !s100 BzDWH;m`OaXik29H`6i2S1
-R6
+R5
 I>9XngBYLTi82Y5N1QQ<i33
 R0
 w1789458458
@@ -119,14 +142,37 @@ w1789458458
 Ftb/tb_pc_reg.v
 !i122 6
 L0 5 90
+R6
 R7
-R8
 r1
 !s85 0
 31
+R13
 R14
 R15
-R16
 !i113 0
-R12
+R11
+R2
+vtb_regfile
+R16
+!i10b 1
+!s100 J;0T1<6fkZ3Sek`U^O@iI2
+R5
+IRd>F4?OFPYV6ER]@0jIOj2
+R0
+w1789461812
+8tb/tb_regfile.v
+Ftb/tb_regfile.v
+!i122 8
+L0 4 71
+R6
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 0
+R11
 R2

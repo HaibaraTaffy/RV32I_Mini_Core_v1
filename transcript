@@ -12,25 +12,16 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -gui -voptargs="+acc" work.tb_alu 
-# Start time: 16:11:17 on Sep 15,2026
+# vsim -gui -voptargs="+acc" work.tb_regfile 
+# Start time: 16:43:54 on Sep 15,2026
 # ** Note: (vsim-3812) Design is being optimized...
-# Loading work.tb_alu(fast)
-# Loading work.alu(fast)
+# Loading work.tb_regfile(fast)
+# Loading work.regfile(fast)
 view -new wave
 # .main_pane.wave.interior.cs.body.pw.wf
-add wave -position insertpoint sim:/tb_alu/*
+add wave -position insertpoint sim:/tb_regfile/*
 run
-run
-run
-run
-run
-run
-run
-run
-# ** Note: $finish    : tb/tb_alu.v(56)
-#    Time: 80 ns  Iteration: 0  Instance: /tb_alu
+# ** Note: $finish    : tb/tb_regfile.v(71)
+#    Time: 80 ns  Iteration: 0  Instance: /tb_regfile
 # 1
-# Break in Module tb_alu at tb/tb_alu.v line 56
-# End time: 16:13:46 on Sep 15,2026, Elapsed time: 0:02:29
-# Errors: 0, Warnings: 0
+# Break in Module tb_regfile at tb/tb_regfile.v line 71

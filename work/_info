@@ -12,55 +12,66 @@ Z0 dD:/all_project_file/Verilog_File/RV32I_Mini_Core_v1
 T_opt
 !s110 1789458298
 Vd@UI=dX6771OSYB_9]DiX1
-04 9 4 work tb_pc_reg fast 0
+Z1 04 9 4 work tb_pc_reg fast 0
 =1-3043d7ebc996-6aa8f778-35b-5b84
 o-quiet -auto_acc_if_foreign -work work
-Z1 tCvgOpt 0
+Z2 tCvgOpt 0
 n@_opt
-OL;O;2020.4;71
+Z3 OL;O;2020.4;71
+R0
+T_opt1
+!s110 1789458671
+V0miB_O2[zRYPj803Rl^CK1
+R1
+=1-3043d7ebc996-6aa8f8ef-197-1a64
+o-quiet -auto_acc_if_foreign -work work +acc
+R2
+n@_opt1
+R3
+R0
 vpc_reg
-Z2 !s110 1789458285
+Z4 !s110 1789458877
 !i10b 1
 !s100 =@ZMSeR[nXbzl_:C=L=X=3
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I=6[86k[Yc7R>HlzR7:im71
 R0
 w1789457551
 8rtl/pc_reg.v
 Frtl/pc_reg.v
-!i122 2
+!i122 6
 L0 10 16
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2020.4;71
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2020.4;71
 r1
 !s85 0
 31
-!s108 1789458284.000000
-!s107 rtl/pc_reg.v|
-!s90 rtl/pc_reg.v|
+Z8 !s108 1789458877.000000
+!s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
+Z9 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
 !i113 0
-Z6 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
-vtb_pc_reg
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
+vtb_pc_reg
+R4
 !i10b 1
 !s100 BzDWH;m`OaXik29H`6i2S1
-R3
+R5
 I>9XngBYLTi82Y5N1QQ<i33
 R0
-w1789458264
+w1789458458
 8tb/tb_pc_reg.v
 Ftb/tb_pc_reg.v
-!i122 3
+!i122 6
 L0 5 90
-R4
-R5
+R6
+R7
 r1
 !s85 0
 31
-!s108 1789458285.000000
-!s107 tb/tb_pc_reg.v|
-!s90 tb/tb_pc_reg.v|
+R8
+Z11 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
+R9
 !i113 0
-R6
-R1
+R10
+R2

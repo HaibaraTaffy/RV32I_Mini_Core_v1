@@ -39,7 +39,7 @@ initial begin
     opcode = 7'b1100011;//BRANCH
     #10;
 
-    opcode = 7'b1111111;//违规
+    opcode = 7'b1111111;//未识别
     #10;
                         //仿真全通过
     $finish;

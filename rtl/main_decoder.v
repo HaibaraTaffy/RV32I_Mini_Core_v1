@@ -67,7 +67,7 @@ localparam [6:0] OPCODE_BRANCH = 7'b1100011;
 
 always @(*) begin
     //设置默认值
-    reg_write = 1'b0;//默认关闭寄存器
+    reg_write = 1'b0;// 默认禁止写Register File
     alu_src   = 1'b0;//默认选择RF为输入源
     mem_write = 1'b0;//默认不写Data Memory
     result_src= 1'b0;//默认ALU Result 写回RF
@@ -77,19 +77,19 @@ always @(*) begin
 
     case(opcode)
         OPCODE_OP: begin        //OP操作 只涉及寄存器和ALU
-            reg_write = 1'b1;   //开放寄存器 
+            reg_write = 1'b1;   // 允许写Register File 
             alu_op    = 2'b10;  //选择继续译码
         end
 
         OPCODE_OP_IMM: begin   // IMM操作 涉及寄存器 ImmGen ALU
-            reg_write = 1'b1;  //开放寄存器
+            reg_write = 1'b1;  // 允许写Register File
             alu_src   = 1'b1;  //选择Immediate
             imm_src   = 2'b00; //选择I-type 对应Immediate
             alu_op    = 2'b00; //默认执行ADD
         end
 
         OPCODE_LOAD: begin      //LOAD 操作 涉及寄存器 ALU Data Memory ImmGen
-            reg_write  = 1'b1;  //开放寄存器
+            reg_write  = 1'b1;  // 允许写Register File
             alu_src    = 1'b1;  //选择Immediate
             result_src = 1'b1;  //用Data Memory中的数据写回RF
             imm_src    = 2'b00; //选择I-type 涉及Immediate

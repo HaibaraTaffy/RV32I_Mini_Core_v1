@@ -25,3 +25,5 @@ run
 #    Time: 60 ns  Iteration: 0  Instance: /tb_main_decoder
 # 1
 # Break in Module tb_main_decoder at tb/tb_main_decoder.v line 45
+# End time: 09:43:57 on Sep 16,2026, Elapsed time: 0:12:40
+# Errors: 0, Warnings: 0

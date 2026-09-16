@@ -18,16 +18,16 @@ Z1 o-quiet -auto_acc_if_foreign -work work +acc
 Z2 tCvgOpt 0
 n@_opt
 Z3 OL;O;2020.4;71
+R0
 T_opt1
-!s110 1789478566
-VN7>;VUiJA>m]lV6>jKO>c1
-04 10 4 work tb_imm_gen fast 0
-=1-3043d7ebc996-6aa946a6-a4-d2c
+!s110 1789541262
+V:DO7C?Pefo1DzNCAPn]2g3
+04 16 4 work tb_next_pc_logic fast 0
+=1-3043d7ebc996-6aaa3b8e-12-16bc
 R1
 R2
 n@_opt1
 R3
-R0
 T_opt2
 !s110 1789522279
 V]9;cBk;KoF0n9LMCi<XDo3
@@ -130,8 +130,31 @@ Z23 !s90 rtl/main_decoder.v|tb/tb_main_decoder.v|
 !i113 0
 R11
 R2
+vnext_pc_logic
+Z24 !s110 1789541245
+!i10b 1
+!s100 kGHY5g=AW^3D`4@`Y]0k<2
+R5
+I8T=[ZEa^9?KP:zndioZSi0
+R0
+w1789540694
+8rtl/next_pc_logic.v
+Frtl/next_pc_logic.v
+!i122 15
+L0 19 22
+R6
+R7
+r1
+!s85 0
+31
+Z25 !s108 1789541245.000000
+Z26 !s107 tb/tb_next_pc_logic.v|rtl/next_pc_logic.v|
+Z27 !s90 rtl/next_pc_logic.v|tb/tb_next_pc_logic.v|
+!i113 0
+R11
+R2
 vpc_reg
-Z24 !s110 1789458877
+Z28 !s110 1789458877
 !i10b 1
 !s100 =@ZMSeR[nXbzl_:C=L=X=3
 R5
@@ -147,14 +170,14 @@ R7
 r1
 !s85 0
 31
-Z25 !s108 1789458877.000000
-Z26 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
-Z27 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
+Z29 !s108 1789458877.000000
+Z30 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
+Z31 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
 !i113 0
 R11
 R2
 vregfile
-Z28 !s110 1789462134
+Z32 !s110 1789462134
 !i10b 1
 !s100 o64G;ReiH7GeNO;Ge7AP^1
 R5
@@ -170,9 +193,9 @@ R7
 r1
 !s85 0
 31
-Z29 !s108 1789462134.000000
-Z30 !s107 tb/tb_regfile.v|rtl/regfile.v|
-Z31 !s90 rtl/regfile.v|tb/tb_regfile.v|
+Z33 !s108 1789462134.000000
+Z34 !s107 tb/tb_regfile.v|rtl/regfile.v|
+Z35 !s90 rtl/regfile.v|tb/tb_regfile.v|
 !i113 0
 R11
 R2
@@ -268,8 +291,31 @@ R23
 !i113 0
 R11
 R2
-vtb_pc_reg
+vtb_next_pc_logic
 R24
+!i10b 1
+!s100 e88nP;MhIQb9zThZ=1<SS2
+R5
+I9zV1l5[[h9eiNH?k]m;lj0
+R0
+w1789541236
+8tb/tb_next_pc_logic.v
+Ftb/tb_next_pc_logic.v
+!i122 15
+L0 3 65
+R6
+R7
+r1
+!s85 0
+31
+R25
+R26
+R27
+!i113 0
+R11
+R2
+vtb_pc_reg
+R28
 !i10b 1
 !s100 BzDWH;m`OaXik29H`6i2S1
 R5
@@ -285,14 +331,14 @@ R7
 r1
 !s85 0
 31
-R25
-R26
-R27
+R29
+R30
+R31
 !i113 0
 R11
 R2
 vtb_regfile
-R28
+R32
 !i10b 1
 !s100 :_4?h[jBU4>oH6W7jOJcN3
 R5
@@ -308,9 +354,9 @@ R7
 r1
 !s85 0
 31
-R29
-R30
-R31
+R33
+R34
+R35
 !i113 0
 R11
 R2

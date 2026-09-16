@@ -29,8 +29,10 @@ reg [31:0] memory [0:DEPTH-1];
 wire [ADDR_WIDTH-1:0] word_index;
 
 integer i;
-//由地址转换成序号 这里只使用了一部分的bit 即address[9:2] 
-//允许的最大地址就是 00..11_1111_1111 -> 0x0000_03FF
+// 1 KiB空间的Byte Address范围为0x0000_0000～0x0000_03FF (1024B - > 2^10 B -> 
+//00_0000_0000 ~ 11_1111_1111 一共1024B)
+// 32-bit Instruction按4 Byte对齐，最后一个起始地址为0x0000_03FC
+// 第一版假设输入地址始终位于该范围内并且正确对齐
 assign word_index = address[ADDR_WIDTH+1:2];
 //由序号取出指令
 assign instruction = memory[word_index];

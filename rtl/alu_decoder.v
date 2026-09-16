@@ -1,5 +1,5 @@
 // RV32I Mini Core - ALU_decoder
-// 第一版 暂时只接受 f7 = Instruction[30] 就够了
+// 第一版 暂时只接受 f7[5] 即Instruction[30] 就够了
 
 //因为 add sub需要通过 instruction[30] 区分 其余的可以通过f3来区分
 
@@ -14,7 +14,7 @@
 
 //00 -> 直接执行ADD 不检查f3 f7 用于addi lw sw地址计算
 //01 -> 直接执行SUB 用于beq比较
-//10 -> 继续根据 f3 和 f5 判断 add sub and or xor
+//10 -> 继续根据 f3 和 f7 判断 add sub and or xor
 
 //| funct3 | funct7_bit5 | ALU操作 |
 //| ------ | ----------: | ----- |

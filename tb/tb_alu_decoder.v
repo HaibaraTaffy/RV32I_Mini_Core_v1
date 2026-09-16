@@ -44,7 +44,7 @@ initial begin
     #10;//根据f3 应为ALU_XOR 0100
 
     funct3      = 3'b010;
-    #10;//根据f3 无效 应为ALU_ADD 0000
+    #10;//根据f3 暂时不支持 输出默认值 应为ALU_ADD 0000
 
     alu_op      = 2'b11;
     funct3      = 3'b000;

@@ -1,3 +1,4 @@
+// Created by HaibaraTaffy
 // RV32I Mini Core - Integer Register File
 
 //read_addr1 = rs1 = Register Index

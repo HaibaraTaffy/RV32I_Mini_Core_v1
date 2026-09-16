@@ -13,8 +13,8 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -gui -voptargs="+acc" work.tb_rv32i_core 
-# Start time: 20:01:48 on Sep 16,2026
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 21:34:51 on Sep 16,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
 # Loading work.tb_rv32i_core(fast)
 # Loading work.rv32i_core(fast)
 # Loading work.pc_reg(fast)
@@ -26,71 +26,5 @@
 # Loading work.alu(fast)
 # Loading work.data_memory(fast)
 # Loading work.next_pc_logic(fast)
-view -new wave
-# .main_pane.wave.interior.cs.body.pw.wf
-add wave -position insertpoint sim:/tb_rv32i_core/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: lancelot zhou  Hostname: HAIBARA  ProcessID: 38412
-#           Attempting to use alternate WLF file "./wlft40ndev".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft40ndev
-view -new wave
-# .main_pane.wave.interior.cs.body.pw.wf
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/pc
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/clk \
-sim:/tb_rv32i_core/rst
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/pc
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/instruction
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/next_pc
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/rs1
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/rs2
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/rd
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/read_data1
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/read_data2
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/immediate
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/alu_src
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/alu_control
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/alu_operand_b
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/alu_result
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/zero
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/memory_read_data
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/write_back_data
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/reg_write
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/mem_write
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/result_src
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/branch
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/branch_target
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/pc_src
-run
-run
-# ** Note: $finish    : tb/tb_rv32i_core.v(34)
-#    Time: 120 ns  Iteration: 0  Instance: /tb_rv32i_core
-# 1
-# Break in Module tb_rv32i_core at tb/tb_rv32i_core.v line 34
-run
-# End time: 20:45:01 on Sep 16,2026, Elapsed time: 0:43:13
-# Errors: 0, Warnings: 2
+# End time: 22:04:15 on Sep 16,2026, Elapsed time: 0:29:24
+# Errors: 0, Warnings: 0

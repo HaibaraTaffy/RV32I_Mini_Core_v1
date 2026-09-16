@@ -62,7 +62,7 @@ wire                    funct7_bit5;
 wire                    reg_write ;//决定是否写寄存器
 wire                    alu_src   ;//决定alu Operand B的来源
 wire                    mem_write ;//决定是否写存储器
-wire                    result_src;//决定写存储器数据的来源
+wire                    result_src;//决定写回 Register File 的数据来源
 wire                    branch    ;//是否是beq指令
 wire      [1:0]         imm_src   ;//Instruction Format 用于译出立即数
 wire      [1:0]         alu_op    ;//alu的操作码 由 main_decoder产生
@@ -86,6 +86,12 @@ wire [31:0]     write_back_data;//用于写回RF
 
 // Next-PC Control
 wire pc_src;
+//用于rst复位
+wire reg_write_enable;
+wire mem_write_enable;
+
+assign reg_write_enable = reg_write & ~rst;
+assign mem_write_enable = mem_write & ~rst;
 
 // Instruction字段拆分
 assign opcode      = instruction[6:0];//送入 main_decoder进行译码
@@ -141,7 +147,7 @@ alu_decoder u_alu_decoder(
 
 regfile u_regfile(
     .clk(clk),
-    .write_enable(reg_write),//根据控制信号 是否写入
+    .write_enable(reg_write_enable),//根据控制信号 是否写入
     .read_addr1(rs1),//instruction 传入源寄存器1序号
     .read_addr2(rs2),//instruction 传入源寄存器2序号
     .write_addr(rd), //instruction 传入目标寄存器序号
@@ -171,12 +177,12 @@ alu u_alu(
 //数据存储器 根据mem_write(由main_decoder译出)控制写入
 //lw sw的指令算出的地址 由alu_result得到
 //写入的data 来自 read_data2
-//读出的data 驱动到 memory_read_data 供ALU Operand B MUX使用
+//读出的 data 驱动到 memory_read_data，供 Write-Back MUX 使用
 data_memory #(
     .ADDR_WIDTH(DMEM_ADDR_WIDTH)
 )u_data_memory(
     .clk           (clk) ,
-    .write_enable  (mem_write) ,
+    .write_enable  (mem_write_enable) ,
     .address       (alu_result) ,
     .write_data    (read_data2) ,
     .read_data     (memory_read_data)

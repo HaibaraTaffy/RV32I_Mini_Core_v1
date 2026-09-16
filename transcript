@@ -92,3 +92,5 @@ run
 # 1
 # Break in Module tb_rv32i_core at tb/tb_rv32i_core.v line 34
 run
+# End time: 20:45:01 on Sep 16,2026, Elapsed time: 0:43:13
+# Errors: 0, Warnings: 2

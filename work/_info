@@ -28,16 +28,16 @@ R1
 R2
 n@_opt1
 R3
+R0
 T_opt2
-!s110 1789459878
-VE=J:;J:lb`nBeh7]4[Y4W3
-04 6 4 work tb_alu fast 0
-=1-3043d7ebc996-6aa8fda5-2b3-6c40
+!s110 1789522279
+V]9;cBk;KoF0n9LMCi<XDo3
+04 15 4 work tb_main_decoder fast 0
+=1-3043d7ebc996-6aa9f165-389-2834
 R1
 R2
 n@_opt2
 R3
-R0
 valu
 Z4 !s110 1789459859
 !i10b 1
@@ -84,8 +84,31 @@ Z15 !s90 rtl/imm_gen.v|tb/tb_imm_gen.v|
 !i113 0
 R11
 R2
+vmain_decoder
+Z16 !s110 1789522248
+!i10b 1
+!s100 U4aeaE2<ESP:0;Po@>EiH1
+R5
+IlW;TEX;O;:Zem0m01GETB3
+R0
+w1789522242
+8rtl/main_decoder.v
+Frtl/main_decoder.v
+!i122 13
+L0 51 74
+R6
+R7
+r1
+!s85 0
+31
+Z17 !s108 1789522247.000000
+Z18 !s107 tb/tb_main_decoder.v|rtl/main_decoder.v|
+Z19 !s90 rtl/main_decoder.v|tb/tb_main_decoder.v|
+!i113 0
+R11
+R2
 vpc_reg
-Z16 !s110 1789458877
+Z20 !s110 1789458877
 !i10b 1
 !s100 =@ZMSeR[nXbzl_:C=L=X=3
 R5
@@ -101,14 +124,14 @@ R7
 r1
 !s85 0
 31
-Z17 !s108 1789458877.000000
-Z18 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
-Z19 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
+Z21 !s108 1789458877.000000
+Z22 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
+Z23 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
 !i113 0
 R11
 R2
 vregfile
-Z20 !s110 1789462134
+Z24 !s110 1789462134
 !i10b 1
 !s100 o64G;ReiH7GeNO;Ge7AP^1
 R5
@@ -124,9 +147,9 @@ R7
 r1
 !s85 0
 31
-Z21 !s108 1789462134.000000
-Z22 !s107 tb/tb_regfile.v|rtl/regfile.v|
-Z23 !s90 rtl/regfile.v|tb/tb_regfile.v|
+Z25 !s108 1789462134.000000
+Z26 !s107 tb/tb_regfile.v|rtl/regfile.v|
+Z27 !s90 rtl/regfile.v|tb/tb_regfile.v|
 !i113 0
 R11
 R2
@@ -176,8 +199,31 @@ R15
 !i113 0
 R11
 R2
-vtb_pc_reg
+vtb_main_decoder
 R16
+!i10b 1
+!s100 PXMoTSDHR9Z8E:m[1:nfQ3
+R5
+IKo^[N1h;3M>=1>jFRlzAe3
+R0
+w1789522119
+8tb/tb_main_decoder.v
+Ftb/tb_main_decoder.v
+!i122 13
+L0 3 46
+R6
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 0
+R11
+R2
+vtb_pc_reg
+R20
 !i10b 1
 !s100 BzDWH;m`OaXik29H`6i2S1
 R5
@@ -193,14 +239,14 @@ R7
 r1
 !s85 0
 31
-R17
-R18
-R19
+R21
+R22
+R23
 !i113 0
 R11
 R2
 vtb_regfile
-R20
+R24
 !i10b 1
 !s100 :_4?h[jBU4>oH6W7jOJcN3
 R5
@@ -216,9 +262,9 @@ R7
 r1
 !s85 0
 31
-R21
-R22
-R23
+R25
+R26
+R27
 !i113 0
 R11
 R2

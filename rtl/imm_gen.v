@@ -29,7 +29,7 @@ localparam [1:0] IMM_S = 2'b01;
 localparam [1:0] IMM_B = 2'b10;
 
 always @(*) begin
-    case (imm_src)//组合逻辑 判断Instruction Format 进而生成32bit Immediate
+    case (imm_src)//组合逻辑 根据Instruction Format 进而生成32bit Immediate
         IMM_I : begin
             immediate = {
                 {20{instruction[31]}},

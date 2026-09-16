@@ -1,8 +1,8 @@
 // RV32I Mini Core - Next pc logic
 
-//只支持 beq +4
+// 第一版支持顺序执行PC+4，以及beq成立时跳转到Branch Target
 
-//PCSrc = branch && zero
+//pcsrc = branch && zero
 
 //在时钟边缘让PC读取next_pc
 

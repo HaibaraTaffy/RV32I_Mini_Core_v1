@@ -41,7 +41,7 @@ initial begin
 
     zero = 1'b1;
     #10;
-    //branch为1 zero为0 跳转 但是current_pc = 32'h0000_0000 
+    //branch为1 zero为1 跳转 但是current_pc = 32'h0000_0000 
     //于是next_pc = branch_target = 0 + 32'h0000_0010 = 32'h0000_0010
 
     current_pc = 32'h0000_0100;

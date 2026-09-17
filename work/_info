@@ -20,10 +20,10 @@ n@_opt
 Z3 OL;O;2020.4;71
 R0
 T_opt1
-!s110 1789560110
-V_:EAcaHm4R_dH_gKjmY8R2
+!s110 1789643055
+V3l0QdZffX`K05Ha:1d]zl1
 04 13 4 work tb_rv32i_core fast 0
-=1-3043d7ebc996-6aaa852d-280-66c8
+=1-3043d7ebc996-6aabc924-77-7190
 R1
 R2
 n@_opt1
@@ -39,7 +39,7 @@ n@_opt2
 R3
 R0
 valu
-Z4 !s110 1789560085
+Z4 !s110 1789642999
 !i10b 1
 !s100 P0oL4S81=;2ElImLegR_42
 Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -48,16 +48,16 @@ R0
 w1789546558
 8rtl/alu.v
 Frtl/alu.v
-!i122 21
+!i122 22
 L0 11 30
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 Z7 OL;L;2020.4;71
 r1
 !s85 0
 31
-Z8 !s108 1789560085.000000
-Z9 !s107 tb/tb_rv32i_core.v|rtl/rv32i_core.v|rtl/next_pc_logic.v|rtl/data_memory.v|rtl/alu.v|rtl/imm_gen.v|rtl/regfile.v|rtl/alu_decoder.v|rtl/main_decoder.v|rtl/instruction_memory.v|rtl/pc_reg.v|
-Z10 !s90 rtl/pc_reg.v|rtl/instruction_memory.v|rtl/main_decoder.v|rtl/alu_decoder.v|rtl/regfile.v|rtl/imm_gen.v|rtl/alu.v|rtl/data_memory.v|rtl/next_pc_logic.v|rtl/rv32i_core.v|tb/tb_rv32i_core.v|
+Z8 !s108 1789642998.000000
+Z9 !s107 tb/tb_rv32i_core.v|rtl/rv32i_core.v|rtl/data_memory.v|rtl/instruction_memory.v|rtl/next_pc_logic.v|rtl/alu_decoder.v|rtl/main_decoder.v|rtl/imm_gen.v|rtl/regfile.v|rtl/alu.v|rtl/pc_reg.v|
+Z10 !s90 rtl/pc_reg.v|rtl/alu.v|rtl/regfile.v|rtl/imm_gen.v|rtl/main_decoder.v|rtl/alu_decoder.v|rtl/next_pc_logic.v|rtl/instruction_memory.v|rtl/data_memory.v|rtl/rv32i_core.v|tb/tb_rv32i_core.v|
 !i113 0
 Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
@@ -71,7 +71,7 @@ R0
 w1789546557
 8rtl/alu_decoder.v
 Frtl/alu_decoder.v
-!i122 21
+!i122 22
 L0 29 59
 R6
 R7
@@ -94,7 +94,7 @@ R0
 w1789547315
 8rtl/data_memory.v
 Frtl/data_memory.v
-!i122 21
+!i122 22
 L0 13 38
 R6
 R7
@@ -117,7 +117,7 @@ R0
 w1789546551
 8rtl/imm_gen.v
 Frtl/imm_gen.v
-!i122 21
+!i122 22
 L0 21 46
 R6
 R7
@@ -140,7 +140,7 @@ R0
 w1789546550
 8rtl/instruction_memory.v
 Frtl/instruction_memory.v
-!i122 21
+!i122 22
 L0 18 31
 R6
 R7
@@ -163,7 +163,7 @@ R0
 w1789546549
 8rtl/main_decoder.v
 Frtl/main_decoder.v
-!i122 21
+!i122 22
 L0 52 74
 R6
 R7
@@ -186,7 +186,7 @@ R0
 w1789546548
 8rtl/next_pc_logic.v
 Frtl/next_pc_logic.v
-!i122 21
+!i122 22
 L0 20 22
 R6
 R7
@@ -209,7 +209,7 @@ R0
 w1789546545
 8rtl/pc_reg.v
 Frtl/pc_reg.v
-!i122 21
+!i122 22
 L0 11 16
 R6
 R7
@@ -232,7 +232,7 @@ R0
 w1789546546
 8rtl/regfile.v
 Frtl/regfile.v
-!i122 21
+!i122 22
 L0 14 28
 R6
 R7
@@ -248,15 +248,15 @@ R2
 vrv32i_core
 R4
 !i10b 1
-!s100 0PXCgC[`<3JT`OXo<9Gzl2
+!s100 ]9I`JICZSC1OMmfe=;G363
 R5
-ILB>4dPH11YRanBDU?Y1RT2
+IVNWbF`HW^WfB]:OBDXWRG1
 R0
-w1789560080
+w1789562828
 8rtl/rv32i_core.v
 Frtl/rv32i_core.v
-!i122 21
-L0 36 163
+!i122 22
+L0 36 169
 R6
 R7
 r1
@@ -478,15 +478,15 @@ R2
 vtb_rv32i_core
 R4
 !i10b 1
-!s100 ?==aN4nC:c[:<@4Ye?_8N2
+!s100 YYRa;e1<f^iELS`_4h64F1
 R5
-I1WQl5G?zkXIC;4R75ln@<1
+ISe=UNfASll[Zcfh>^5]]M2
 R0
-w1789559651
+w1789642988
 8tb/tb_rv32i_core.v
 Ftb/tb_rv32i_core.v
-!i122 21
-L0 9 29
+!i122 22
+L0 23 29
 R6
 R7
 r1

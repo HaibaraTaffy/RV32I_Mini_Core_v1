@@ -7,7 +7,7 @@ sim/*.out
 sim/*.wlf
 sim/work/
 sim/xsim.dir/
-sim/modelsim/*
+
 !sim/modelsim/.gitkeep
 
 # FPGA/tool generated files

@@ -95,3 +95,19 @@ run
 # 1
 # Break in Module tb_rv32i_core at tb/tb_rv32i_core.v line 48
 # Causality operation skipped due to absence of debug database file
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.tb_rv32i_core(fast)
+# Loading work.rv32i_core(fast)
+# Loading work.pc_reg(fast)
+# Loading work.instruction_memory(fast)
+# Loading work.main_decoder(fast)
+# Loading work.alu_decoder(fast)
+# Loading work.regfile(fast)
+# Loading work.imm_gen(fast)
+# Loading work.alu(fast)
+# Loading work.data_memory(fast)
+# Loading work.next_pc_logic(fast)
+# End time: 19:23:53 on Sep 17,2026, Elapsed time: 0:19:53
+# Errors: 0, Warnings: 0

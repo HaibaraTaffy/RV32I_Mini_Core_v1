@@ -12,102 +12,27 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# vsim -gui -voptargs="+acc" work.tb_rv32i_core 
-# Start time: 19:04:00 on Sep 17,2026
+# vsim -gui -voptargs="+acc" work.tb_alu 
+# Start time: 22:30:39 on Sep 17,2026
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_rv32i_core(fast)
-# Loading work.rv32i_core(fast)
-# Loading work.pc_reg(fast)
-# Loading work.instruction_memory(fast)
-# Loading work.main_decoder(fast)
-# Loading work.alu_decoder(fast)
-# Loading work.regfile(fast)
-# Loading work.imm_gen(fast)
+# Loading work.tb_alu(fast)
 # Loading work.alu(fast)
-# Loading work.data_memory(fast)
-# Loading work.next_pc_logic(fast)
 view -new wave
 # .main_pane.wave.interior.cs.body.pw.wf
 add wave -position insertpoint  \
-sim:/tb_rv32i_core/clk
+sim:/tb_alu/alu_control \
+sim:/tb_alu/operand_a \
+sim:/tb_alu/operand_b \
+sim:/tb_alu/result \
+sim:/tb_alu/zero
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: lancelot zhou  Hostname: HAIBARA  ProcessID: 38412
-#           Attempting to use alternate WLF file "./wlfthn69wf".
+#           Attempting to use alternate WLF file "./wlftrd9kfg".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthn69wf
-view -new wave
-# can't read "tbX(tbf22)": no such element in array
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/rst
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/rst
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/pc
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/instruction
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/next_pc
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/opcode
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/rs1
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/rs2
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/rd
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/immediate
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/read_data1
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/read_data2
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/alu_operand_b
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/alu_control
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/alu_result
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/zero
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/memory_read_data
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/write_back_data
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/reg_write_enable
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/mem_write_enable
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/alu_src
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/result_src
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/branch
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/pc_src
-add wave -position insertpoint  \
-sim:/tb_rv32i_core/dut/branch_target
+#           Using alternate file: ./wlftrd9kfg
 run
 run
-run
-# ** Note: $finish    : tb/tb_rv32i_core.v(48)
-#    Time: 220 ns  Iteration: 0  Instance: /tb_rv32i_core
+# ** Note: $finish    : tb/tb_alu.v(93)
+#    Time: 150 ns  Iteration: 0  Instance: /tb_alu
 # 1
-# Break in Module tb_rv32i_core at tb/tb_rv32i_core.v line 48
-# Causality operation skipped due to absence of debug database file
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_rv32i_core(fast)
-# Loading work.rv32i_core(fast)
-# Loading work.pc_reg(fast)
-# Loading work.instruction_memory(fast)
-# Loading work.main_decoder(fast)
-# Loading work.alu_decoder(fast)
-# Loading work.regfile(fast)
-# Loading work.imm_gen(fast)
-# Loading work.alu(fast)
-# Loading work.data_memory(fast)
-# Loading work.next_pc_logic(fast)
-# End time: 19:23:53 on Sep 17,2026, Elapsed time: 0:19:53
-# Errors: 0, Warnings: 0
+# Break in Module tb_alu at tb/tb_alu.v line 93

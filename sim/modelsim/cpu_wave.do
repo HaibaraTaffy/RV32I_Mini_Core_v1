@@ -19,6 +19,7 @@ add wave -radix hexadecimal sim:/tb_rv32i_core/dut/alu_operand_b
 add wave -radix binary sim:/tb_rv32i_core/dut/alu_control
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/alu_result
 add wave sim:/tb_rv32i_core/dut/zero
+add wave sim:/tb_rv32i_core/dut/less_than
 
 add wave -divider {Memory and Write Back}
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/memory_read_data

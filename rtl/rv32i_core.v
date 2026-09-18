@@ -78,7 +78,8 @@ wire [31:0]     immediate;
 wire [3:0]      alu_control;//alu_decoder由alu_op f3和f7 译出 来指导alu做操作
 wire [31:0]     alu_operand_b;//由alu operand B mux 选出 参与alu运算
 wire [31:0]     alu_result;//alu计算结果 可能是Address 也可能是data
-wire            zero;       //用于 beq 的跳转
+wire            zero;       //用于 branch 的跳转
+wire            less_than;
 
 //Data Memory 与 Write Back
 wire [31:0]     memory_read_data;
@@ -107,6 +108,7 @@ assign alu_operand_b = alu_src ? immediate : read_data2;
 // 选择写回RF的数据来源
 assign write_back_data =
     result_src ? memory_read_data : alu_result;
+assign less_than = alu_result[0];
 
 pc_reg u_pc_reg(
     .clk    (clk),
@@ -191,8 +193,10 @@ data_memory #(
 next_pc_logic u_next_pc_logic(
     .current_pc   (pc           )    ,
     .immediate    (immediate    )    ,
+    .funct3       (funct3       )    ,
     .branch       (branch       )    ,
     .zero         (zero         )    ,
+    .less_than    (less_than    )    ,
     .pc_plus4     (pc_plus4     )    ,
     .branch_target(branch_target)    ,
     .pc_src       (pc_src       )    ,

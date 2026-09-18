@@ -4,8 +4,10 @@ module tb_next_pc_logic;
 
 reg  [31:0] current_pc;
 reg  [31:0] immediate;
+reg  [2:0]  funct3;
 reg         branch;
 reg         zero;
+reg         less_than;   
 
 wire [31:0] pc_plus4;
 wire [31:0] branch_target;
@@ -16,7 +18,9 @@ next_pc_logic dut (
     .current_pc    (current_pc),
     .immediate     (immediate),
     .branch        (branch),
+    .funct3        (funct3),
     .zero          (zero),
+    .less_than     (less_than),
     .pc_plus4      (pc_plus4),
     .branch_target (branch_target),
     .pc_src        (pc_src),
@@ -24,10 +28,13 @@ next_pc_logic dut (
 );
 
 initial begin
+    //初始化
     current_pc = 32'h0000_0000;
     immediate  = 32'h0000_0010;
+    funct3     = 3'b000;
     branch     = 1'b0;
     zero       = 1'b0;
+    less_than  = 1'b0;
     #10;
 
     zero = 1'b1;
@@ -61,6 +68,41 @@ initial begin
     zero       = 1'b0;
     #10;
     //branch = 0 于是 next_pc = pc_plus4 = 32'h0000_0000
+
+    current_pc = 32'h0000_0100;
+    immediate  = 32'h0000_0010;
+    funct3     = 3'b001;
+    branch     = 1'b1;
+    zero       = 1'b1;
+    less_than  = 1'b0;
+    #10;
+    //branch = 1 funct3 = 001 对应 BNE
+    //zero = 1 BNE 不成立 next_pc = pc_plus4 = 32'h0000_0104
+    zero = 1'b0;//zero = 1 BNE 成立 next_pc = branch_target = 32'h0000_0110
+    #10;
+
+    funct3    = 3'b100;
+    zero      = 1'b0;
+    less_than = 1'b1;
+    #10;
+    //funct3 = 100 对应 BLT
+    //less_than =  1 BLT成立 next_pc = branch_target = 32'h0000_0110
+
+    less_than = 1'b0;
+    #10;//less_than = 0 BLT 不成立 next_pc = pc_plus4 = 32'h0000_0104
+
+    funct3    = 3'b101;
+    less_than = 1'b0;
+    #10;//funct3 = 101 对应 BGE 
+    //less_than = 0 BGE 成立 next_pc = branch_target = 32'h0000_0110
+
+    less_than = 1'b1;
+    #10;//less_than = 1 BGE 不成立 next_pc = pc_plus4 = 32'h0000_0104
+
+    funct3    = 3'b010;
+    zero      = 1'b1;
+    less_than = 1'b1;
+    #10;//暂时 无效funct3 next_pc = pc_plus4
     $finish;
 end
 //仿真通过 全部符合预期

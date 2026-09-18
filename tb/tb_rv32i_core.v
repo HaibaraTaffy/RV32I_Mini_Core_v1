@@ -1,7 +1,8 @@
 `timescale 1ns/1ps
 
 
-//目前指令包含
+//目前指令
+//存储在 full_program_test.hex中
 //| Byte Address | Assembly           | Machine Code |
 //| -----------: | ------------------ | ------------ |
 //| `0x00000000` | `addi x1, x0, 5`   | `00500093`   |

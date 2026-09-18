@@ -18,9 +18,23 @@
 //ALUOp
 
 //00 -> 直接执行ADD 不检查f3 f7 用于addi lw sw地址计算
-//01 -> 直接执行SUB 用于beq比较
+//01 -> 进入branch的计算
 //10 -> 继续根据 f3 和 f7 判断 add sub and or xor SLL SLT SRL SRA
 
+//////////ALUOp = 01///////////////
+//| funct3 | funct7_bit5 | ALU操作 |
+//| ------ | ----------: | ----- |
+//| `000`  |           0 | BEQ   |
+//| `001`  |           0 | BNE   |
+//| `100`  |           0 | BLT   |
+//| `101`  |           0 | BGE   |
+
+
+
+
+
+
+//////////ALUOp = 10///////////////
 //| funct3 | funct7_bit5 | ALU操作 |
 //| ------ | ----------: | ----- |
 //| `000`  |           0 | ADD   |
@@ -60,7 +74,27 @@ always @(*) begin
         end
 
         2'b01: begin
-            alu_control = ALU_SUB;
+            case (funct3)
+                3'b000 : begin
+                    alu_control = ALU_SUB;//beq
+                end
+
+                3'b001 : begin
+                    alu_control = ALU_SUB;//bne
+                end
+
+                3'b100 : begin
+                    alu_control = ALU_SLT;//blt
+                end
+
+                3'b101 : begin
+                    alu_control = ALU_SLT;//bge
+                end
+
+                default : begin
+                    alu_control = ALU_SUB;
+                end
+            endcase
         end
 
         2'b10: begin

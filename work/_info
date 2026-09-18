@@ -20,14 +20,15 @@ n@_opt
 Z3 OL;O;2020.4;71
 R0
 T_opt1
-!s110 1789701052
-V7Tzl0JEhkTiaKVQ3Sfj3K0
-04 14 4 work tb_alu_decoder fast 0
-=1-3043d7ebc996-6aacabbb-131-6140
+!s110 1789713896
+VD0mREC2h3YTo8IaC>[LHe0
+04 16 4 work tb_next_pc_logic fast 0
+=1-3043d7ebc996-6aacdde8-115-6768
 R1
 R2
 n@_opt1
 R3
+R0
 T_opt2
 !s110 1789543925
 VSSWVdOXT3DhM=7z01ciJ@3
@@ -39,53 +40,53 @@ n@_opt2
 R3
 R0
 valu
-Z4 !s110 1789655424
+Z4 !s110 1789721285
 !i10b 1
-!s100 cS9H`8hT`T99hRfT<4nV?3
+!s100 UBjU:F=EDYTZ1P?57c8432
 Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IZe>K2N0N]dR;0?oca2:3J0
+IJzGeZ96RL@^h@_<oKFNO51
 R0
-w1789655420
+w1789702734
 8rtl/alu.v
 Frtl/alu.v
-!i122 25
-L0 11 42
+!i122 29
+L0 15 42
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 Z7 OL;L;2020.4;71
 r1
 !s85 0
 31
-Z8 !s108 1789655424.000000
-Z9 !s107 tb/tb_alu.v|rtl/alu.v|
-Z10 !s90 rtl/alu.v|tb/tb_alu.v|
+Z8 !s108 1789721285.000000
+!s107 tb/tb_rv32i_core.v|rtl/rv32i_core.v|rtl/data_memory.v|rtl/instruction_memory.v|rtl/next_pc_logic.v|rtl/alu_decoder.v|rtl/main_decoder.v|rtl/imm_gen.v|rtl/regfile.v|rtl/alu.v|rtl/pc_reg.v|
+Z9 !s90 rtl/pc_reg.v|rtl/alu.v|rtl/regfile.v|rtl/imm_gen.v|rtl/main_decoder.v|rtl/alu_decoder.v|rtl/next_pc_logic.v|rtl/instruction_memory.v|rtl/data_memory.v|rtl/rv32i_core.v|tb/tb_rv32i_core.v|
 !i113 0
-Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 valu_decoder
-Z12 !s110 1789701037
+R4
 !i10b 1
-!s100 BWQ=fNQM<e=LIP:l0bIzc2
+!s100 <JP1hMCLHil@]D:e_F@co2
 R5
-IDX`naFGgHW<VlWGQk>9ba1
+IhQzA?=X_CRZo8_1I>M@Z30
 R0
-w1789700230
+w1789704931
 8rtl/alu_decoder.v
 Frtl/alu_decoder.v
-!i122 26
-L0 37 79
+!i122 29
+L0 51 99
 R6
 R7
 r1
 !s85 0
 31
-Z13 !s108 1789701037.000000
-Z14 !s107 tb/tb_alu_decoder.v|rtl/alu_decoder.v|
-Z15 !s90 rtl/alu_decoder.v|tb/tb_alu_decoder.v|
+R8
+Z11 !s107 tb/tb_rv32i_core.v|rtl/rv32i_core.v|rtl/data_memory.v|rtl/instruction_memory.v|rtl/next_pc_logic.v|rtl/alu_decoder.v|rtl/main_decoder.v|rtl/imm_gen.v|rtl/regfile.v|rtl/alu.v|rtl/pc_reg.v|
+R9
 !i113 0
-R11
+R10
 R2
 vdata_memory
-Z16 !s110 1789642999
+R4
 !i10b 1
 !s100 1OkDR3<Nm>a;23m>U8GXK1
 R5
@@ -94,21 +95,21 @@ R0
 w1789547315
 8rtl/data_memory.v
 Frtl/data_memory.v
-!i122 22
+!i122 29
 L0 13 38
 R6
 R7
 r1
 !s85 0
 31
-Z17 !s108 1789642998.000000
-Z18 !s107 tb/tb_rv32i_core.v|rtl/rv32i_core.v|rtl/data_memory.v|rtl/instruction_memory.v|rtl/next_pc_logic.v|rtl/alu_decoder.v|rtl/main_decoder.v|rtl/imm_gen.v|rtl/regfile.v|rtl/alu.v|rtl/pc_reg.v|
-Z19 !s90 rtl/pc_reg.v|rtl/alu.v|rtl/regfile.v|rtl/imm_gen.v|rtl/main_decoder.v|rtl/alu_decoder.v|rtl/next_pc_logic.v|rtl/instruction_memory.v|rtl/data_memory.v|rtl/rv32i_core.v|tb/tb_rv32i_core.v|
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2
 vimm_gen
-R16
+R4
 !i10b 1
 !s100 5Y;LWXz;TQ<AcCeDEXDnn0
 R5
@@ -117,21 +118,21 @@ R0
 w1789546551
 8rtl/imm_gen.v
 Frtl/imm_gen.v
-!i122 22
+!i122 29
 L0 21 46
 R6
 R7
 r1
 !s85 0
 31
-R17
-R18
-R19
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2
 vinstruction_memory
-R16
+R4
 !i10b 1
 !s100 G8V6:JckRkT2E7@W<fWe73
 R5
@@ -140,21 +141,21 @@ R0
 w1789546550
 8rtl/instruction_memory.v
 Frtl/instruction_memory.v
-!i122 22
+!i122 29
 L0 18 31
 R6
 R7
 r1
 !s85 0
 31
-R17
-R18
-R19
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2
 vmain_decoder
-R16
+R4
 !i10b 1
 !s100 CZB:z@VMXJWjH9M^m1JV70
 R5
@@ -163,44 +164,44 @@ R0
 w1789546549
 8rtl/main_decoder.v
 Frtl/main_decoder.v
-!i122 22
+!i122 29
 L0 52 74
 R6
 R7
 r1
 !s85 0
 31
-R17
-R18
-R19
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2
 vnext_pc_logic
-R16
+R4
 !i10b 1
-!s100 WSf;:0FZd2Sh7ZfL7HhC_2
+!s100 WReX0ZLk;X2aP:2M[C03C0
 R5
-I:J1MB9VlM5JQ9i44R^QSe1
+Ien9H;8LU0W5PNFJnfFodW3
 R0
-w1789546548
+w1789713867
 8rtl/next_pc_logic.v
 Frtl/next_pc_logic.v
-!i122 22
-L0 20 22
+!i122 29
+L0 32 55
 R6
 R7
 r1
 !s85 0
 31
-R17
-R18
-R19
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2
 vpc_reg
-R16
+R4
 !i10b 1
 !s100 @ZIFU>?h2?X^^o:=4iGkb2
 R5
@@ -209,21 +210,21 @@ R0
 w1789546545
 8rtl/pc_reg.v
 Frtl/pc_reg.v
-!i122 22
+!i122 29
 L0 11 16
 R6
 R7
 r1
 !s85 0
 31
-R17
-R18
-R19
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2
 vregfile
-R16
+R4
 !i10b 1
 !s100 3m@PXjoP:Ph@BKVENOfAC1
 R5
@@ -232,44 +233,44 @@ R0
 w1789546546
 8rtl/regfile.v
 Frtl/regfile.v
-!i122 22
+!i122 29
 L0 14 28
 R6
 R7
 r1
 !s85 0
 31
-R17
-R18
-R19
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2
 vrv32i_core
-R16
+R4
 !i10b 1
-!s100 ]9I`JICZSC1OMmfe=;G363
+!s100 XbC^KikAX<FMAHPob@2:^2
 R5
-IVNWbF`HW^WfB]:OBDXWRG1
+IKcKoNf>3NEokJghIB`_kf1
 R0
-w1789562828
+w1789721183
 8rtl/rv32i_core.v
 Frtl/rv32i_core.v
-!i122 22
-L0 36 169
+!i122 29
+L0 36 173
 R6
 R7
 r1
 !s85 0
 31
-R17
-R18
-R19
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2
 vtb_alu
-R4
+!s110 1789655424
 !i10b 1
 !s100 ^L`K?o?aDfjcJJVFBSbAk1
 R5
@@ -285,34 +286,34 @@ R7
 r1
 !s85 0
 31
-R8
-R9
-R10
+!s108 1789655424.000000
+!s107 tb/tb_alu.v|rtl/alu.v|
+!s90 rtl/alu.v|tb/tb_alu.v|
 !i113 0
-R11
+R10
 R2
 vtb_alu_decoder
-R12
+!s110 1789704946
 !i10b 1
-!s100 4z2e^SKk<Zea<UOFze1N:0
+!s100 gGLec;F]^IQ<Un59AJTA93
 R5
-I4cP8R>Z>;mRQ<BH84QK>]1
+Ih8b;[oV=0zF9<EOL]i<5R3
 R0
-w1789701012
+w1789704881
 8tb/tb_alu_decoder.v
 Ftb/tb_alu_decoder.v
-!i122 26
-L0 3 74
+!i122 27
+L0 3 88
 R6
 R7
 r1
 !s85 0
 31
-R13
-R14
-R15
+!s108 1789704946.000000
+!s107 tb/tb_alu_decoder.v|rtl/alu_decoder.v|
+!s90 rtl/alu_decoder.v|tb/tb_alu_decoder.v|
 !i113 0
-R11
+R10
 R2
 vtb_data_memory
 !s110 1789547600
@@ -325,7 +326,7 @@ w1789547593
 8tb/tb_data_memory.v
 Ftb/tb_data_memory.v
 !i122 17
-Z20 L0 3 65
+L0 3 65
 R6
 R7
 r1
@@ -335,7 +336,7 @@ r1
 !s107 tb/tb_data_memory.v|rtl/data_memory.v|
 !s90 rtl/data_memory.v|tb/tb_data_memory.v|
 !i113 0
-R11
+R10
 R2
 vtb_imm_gen
 !s110 1789478543
@@ -358,7 +359,7 @@ r1
 !s107 tb/tb_imm_gen.v|rtl/imm_gen.v|
 !s90 rtl/imm_gen.v|tb/tb_imm_gen.v|
 !i113 0
-R11
+R10
 R2
 vtb_instruction_memory
 !s110 1789543829
@@ -381,7 +382,7 @@ r1
 !s107 tb/tb_instruction_memory.v|rtl/instruction_memory.v|
 !s90 rtl/instruction_memory.v|tb/tb_instruction_memory.v|
 !i113 0
-R11
+R10
 R2
 vtb_main_decoder
 !s110 1789522248
@@ -404,30 +405,30 @@ r1
 !s107 tb/tb_main_decoder.v|rtl/main_decoder.v|
 !s90 rtl/main_decoder.v|tb/tb_main_decoder.v|
 !i113 0
-R11
+R10
 R2
 vtb_next_pc_logic
-!s110 1789541245
+!s110 1789713870
 !i10b 1
-!s100 e88nP;MhIQb9zThZ=1<SS2
+!s100 ?Az48R1aWhl1[JD7c5IiJ1
 R5
-I9zV1l5[[h9eiNH?k]m;lj0
+IHUb5gGI19gcfFWWbeB>870
 R0
-w1789541236
+w1789713820
 8tb/tb_next_pc_logic.v
 Ftb/tb_next_pc_logic.v
-!i122 15
-R20
+!i122 28
+L0 3 107
 R6
 R7
 r1
 !s85 0
 31
-!s108 1789541245.000000
+!s108 1789713870.000000
 !s107 tb/tb_next_pc_logic.v|rtl/next_pc_logic.v|
 !s90 rtl/next_pc_logic.v|tb/tb_next_pc_logic.v|
 !i113 0
-R11
+R10
 R2
 vtb_pc_reg
 !s110 1789458877
@@ -450,7 +451,7 @@ r1
 !s107 tb/tb_pc_reg.v|rtl/pc_reg.v|
 !s90 rtl/pc_reg.v|tb/tb_pc_reg.v|
 !i113 0
-R11
+R10
 R2
 vtb_regfile
 !s110 1789462134
@@ -473,28 +474,28 @@ r1
 !s107 tb/tb_regfile.v|rtl/regfile.v|
 !s90 rtl/regfile.v|tb/tb_regfile.v|
 !i113 0
-R11
+R10
 R2
 vtb_rv32i_core
-R16
+R4
 !i10b 1
-!s100 YYRa;e1<f^iELS`_4h64F1
+!s100 TQ55ORIZO[bVGFKdNg2L01
 R5
-ISe=UNfASll[Zcfh>^5]]M2
+IF@9dNRbY@3`QgGPUlPPP<1
 R0
-w1789642988
+w1789703165
 8tb/tb_rv32i_core.v
 Ftb/tb_rv32i_core.v
-!i122 22
-L0 23 29
+!i122 29
+L0 24 29
 R6
 R7
 r1
 !s85 0
 31
-R17
-R18
-R19
-!i113 0
+R8
 R11
+R9
+!i113 0
+R10
 R2

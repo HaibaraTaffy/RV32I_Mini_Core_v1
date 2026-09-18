@@ -20,10 +20,7 @@ initial begin
     funct7_bit5 = 1'b0;
     #10;//直接执行ADD 输出应为 0000
 
-    alu_op      = 2'b01;
-    funct3      = 3'b000;
-    funct7_bit5 = 1'b0;
-    #10;//直接执行SUB 输出应为 0001
+
 
     alu_op      = 2'b10;
     funct3      = 3'b000;
@@ -69,6 +66,23 @@ initial begin
     funct7_bit5 = 1'b0;
     #10;//根据op判断 暂无对应指令 输出默认ALU_ADD 0000
 
+    alu_op      = 2'b01;//进入 branch 计算
+
+    funct3      = 3'b000;//BEQ 输出应为 ALU_SUB 0001
+    funct7_bit5 = 1'b0;
+    #10;
+
+    funct3      = 3'b001; //BNE 输出 ALU_SUB 0001
+    #10;
+
+    funct3      = 3'b100;//BLT 输出 ALU_SLT 0110
+    #10;
+
+    funct3      = 3'b101;//BGE 输出 ALU_SLT 0110
+    #10;
+
+    funct3      = 3'b010;//暂时无效 输出默认 ALU_SUB 0001
+    #10;
     $finish;
     //全部仿真正确
 end

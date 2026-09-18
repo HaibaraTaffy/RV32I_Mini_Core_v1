@@ -10,12 +10,16 @@
 //0010 → AND
 //0011 → OR
 //0100 → XOR
+//0101 → SLL
+//0110 → SLT
+//0111 → SRL
+//1000 → SRA
 
 //ALUOp
 
 //00 -> 直接执行ADD 不检查f3 f7 用于addi lw sw地址计算
 //01 -> 直接执行SUB 用于beq比较
-//10 -> 继续根据 f3 和 f7 判断 add sub and or xor
+//10 -> 继续根据 f3 和 f7 判断 add sub and or xor SLL SLT SRL SRA
 
 //| funct3 | funct7_bit5 | ALU操作 |
 //| ------ | ----------: | ----- |
@@ -24,6 +28,10 @@
 //| `111`  |           X | AND   |
 //| `110`  |           X | OR    |
 //| `100`  |           X | XOR   |
+//| `001`  |           0 | SLL   |
+//| `010`  |           0 | SLT   |
+//| `101`  |           0 | SRL   |
+//| `101`  |           1 | SRA   |
 
 
 module alu_decoder(
@@ -38,6 +46,10 @@ localparam [3:0] ALU_SUB = 4'b0001;
 localparam [3:0] ALU_AND = 4'b0010;
 localparam [3:0] ALU_OR  = 4'b0011;
 localparam [3:0] ALU_XOR = 4'b0100;
+localparam [3:0] ALU_SLL = 4'b0101;
+localparam [3:0] ALU_SLT = 4'b0110;
+localparam [3:0] ALU_SRL = 4'b0111;
+localparam [3:0] ALU_SRA = 4'b1000;
 
 always @(*) begin
     alu_control = ALU_ADD;//默认相加
@@ -60,16 +72,32 @@ always @(*) begin
                         alu_control = ALU_ADD;
                 end
 
-                3'b111: begin
-                    alu_control = ALU_AND;
+                3'b001: begin
+                    alu_control = ALU_SLL;
+                end
+
+                3'b010: begin
+                    alu_control = ALU_SLT;
+                end
+
+                3'b100: begin
+                    alu_control = ALU_XOR;
+                end
+
+
+                3'b101: begin
+                    if (funct7_bit5)
+                        alu_control = ALU_SRA;
+                    else
+                        alu_control = ALU_SRL; 
                 end
 
                 3'b110: begin
                     alu_control = ALU_OR;
                 end
 
-                3'b100: begin
-                    alu_control = ALU_XOR;
+                3'b111: begin
+                    alu_control = ALU_AND;
                 end
 
                 default: begin

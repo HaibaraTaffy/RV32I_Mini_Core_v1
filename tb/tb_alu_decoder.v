@@ -33,23 +33,41 @@ initial begin
     funct7_bit5 = 1'b1;
     #10;//根据f3 f7判断 应为ALU_SUB 0001
 
+    funct3      = 3'b001;
+    funct7_bit5 = 1'b0;
+    #10;//根据f3 f7判断 应为ALU_SLL 0101
+
+    funct3      = 3'b010;
+    funct7_bit5 = 1'b0;
+    #10;//根据f3 f7判断 应为ALU_SLT 0110
+
+    funct3      = 3'b100;
+    funct7_bit5 = 1'b0;
+    #10;//根据f3 f7判断 应为ALU_XOR 0100
+
+    funct3      = 3'b101;
+    funct7_bit5 = 1'b0;
+    #10;//根据f3 f7判断 应为ALU_SRL 0111
+
+    funct7_bit5 = 1'b1;
+    #10;//根据f3 f7判断 应为ALU_SRA 1000
+
+    funct3      = 3'b110;
+    funct7_bit5 = 1'b0;
+    #10;//根据f3 f7判断 应为ALU_OR 0011
+
     funct3      = 3'b111;
     funct7_bit5 = 1'b0;
     #10;//根据f3 f7判断 应为ALU_AND 0010
 
-    funct3      = 3'b110;
-    #10;//根据f3 应为ALU_OR 0011
-
-    funct3      = 3'b100;
-    #10;//根据f3 应为ALU_XOR 0100
-
-    funct3      = 3'b010;
-    #10;//根据f3 暂时不支持 输出默认值 应为ALU_ADD 0000
+    funct3      = 3'b011;
+    funct7_bit5 = 1'b0;
+    #10;//根据f3 f7判断 暂无对应指令 输出默认ALU_AND 0000
 
     alu_op      = 2'b11;
     funct3      = 3'b000;
     funct7_bit5 = 1'b0;
-    #10;//无效op 应为默认值 ALU_ADD 0000
+    #10;//根据op判断 暂无对应指令 输出默认ALU_AND 0000
 
     $finish;
     //全部仿真正确

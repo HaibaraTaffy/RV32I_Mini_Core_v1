@@ -36,6 +36,7 @@ module next_pc_logic (
     input  wire        branch,
     input  wire        zero,
     input  wire        less_than,  
+    input  wire        jump,
 
     output wire [31:0] pc_plus4,
     output wire [31:0] branch_target,
@@ -78,7 +79,7 @@ always @(*) begin
     endcase
 end
 
-assign pc_src = branch & branch_condition;
+assign pc_src = jump | (branch & branch_condition);
 
 assign next_pc =
     pc_src ? branch_target : pc_plus4;

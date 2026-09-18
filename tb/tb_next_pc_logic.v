@@ -6,6 +6,7 @@ reg  [31:0] current_pc;
 reg  [31:0] immediate;
 reg  [2:0]  funct3;
 reg         branch;
+reg         jump ;
 reg         zero;
 reg         less_than;   
 
@@ -18,6 +19,7 @@ next_pc_logic dut (
     .current_pc    (current_pc),
     .immediate     (immediate),
     .branch        (branch),
+    .jump          (jump),
     .funct3        (funct3),
     .zero          (zero),
     .less_than     (less_than),
@@ -33,6 +35,7 @@ initial begin
     immediate  = 32'h0000_0010;
     funct3     = 3'b000;
     branch     = 1'b0;
+    jump       = 1'b0;
     zero       = 1'b0;
     less_than  = 1'b0;
     #10;
@@ -78,7 +81,7 @@ initial begin
     #10;
     //branch = 1 funct3 = 001 对应 BNE
     //zero = 1 BNE 不成立 next_pc = pc_plus4 = 32'h0000_0104
-    zero = 1'b0;//zero = 1 BNE 成立 next_pc = branch_target = 32'h0000_0110
+    zero = 1'b0;//zero = 0 BNE 成立 next_pc = branch_target = 32'h0000_0110
     #10;
 
     funct3    = 3'b100;
@@ -103,6 +106,25 @@ initial begin
     zero      = 1'b1;
     less_than = 1'b1;
     #10;//暂时 无效funct3 next_pc = pc_plus4
+
+    current_pc = 32'h0000_0100;
+    immediate  = 32'h0000_0020;
+    branch     = 1'b0;
+    jump       = 1'b1;
+    zero       = 1'b0;
+    less_than  = 1'b0;
+    #10;//jump = 1 next_pc = branch_target = 32'h0000_0120
+
+    current_pc = 32'h0000_0100;
+    immediate  = 32'hFFFF_FFE0;
+    jump       = 1'b1;
+    #10;//jump = 1 next_pc = branch_target = 32'h0000_00E0
+
+    jump = 1'b0;
+    //jump = 0 next_pc = current_pc + 4 = 32'h0000_0104
+    #10;
+
+
     $finish;
 end
 //仿真通过 全部符合预期

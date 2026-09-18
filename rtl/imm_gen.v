@@ -11,12 +11,13 @@
 //输出32-bit Immediate
 
 //先支持 I-type S-type B-type 由imm_src来判断
+//第二版支持 J-type
 
 //第一版控制编码
 //imm_src = 00 → I-type
 //imm_src = 01 → S-type
 //imm_src = 10 → B-type
-//imm_src = 11 → 未定义
+//imm_src = 11 → J-type
 
 module imm_gen(
     input   wire    [31:0]  instruction,
@@ -28,7 +29,7 @@ module imm_gen(
 localparam [1:0] IMM_I = 2'b00;
 localparam [1:0] IMM_S = 2'b01;
 localparam [1:0] IMM_B = 2'b10;
-
+localparam [1:0] IMM_J = 2'b10;
 always @(*) begin
     case (imm_src)//组合逻辑 根据Instruction Format 进而生成32bit Immediate
         IMM_I : begin
@@ -53,6 +54,17 @@ always @(*) begin
                 instruction[7],
                 instruction[30:25],
                 instruction[11:8],
+                1'b0
+            };
+        end
+
+        IMM_J : begin
+            immediate = {
+                {11{instruction[31]}},
+                instruction[31],
+                instruction[19:12],
+                instruction[20],
+                instruction[30:21],
                 1'b0
             };
         end

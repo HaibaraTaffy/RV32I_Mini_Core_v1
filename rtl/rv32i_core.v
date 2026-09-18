@@ -62,7 +62,7 @@ wire                    funct7_bit5;
 wire                    reg_write ;//决定是否写寄存器
 wire                    alu_src   ;//决定alu Operand B的来源
 wire                    mem_write ;//决定是否写存储器
-wire                    result_src;//决定写回 Register File 的数据来源
+wire      [1:0]         result_src;//决定写回 Register File 的数据来源
 wire                    branch    ;//是否是beq指令
 wire      [1:0]         imm_src   ;//Instruction Format 用于译出立即数
 wire      [1:0]         alu_op    ;//alu的操作码 由 main_decoder产生
@@ -78,9 +78,9 @@ wire [31:0]     immediate;
 wire [3:0]      alu_control;//alu_decoder由alu_op f3和f7 译出 来指导alu做操作
 wire [31:0]     alu_operand_b;//由alu operand B mux 选出 参与alu运算
 wire [31:0]     alu_result;//alu计算结果 可能是Address 也可能是data
-wire            zero;       //用于 branch 的跳转
+wire            zero     ;       //用于 branch 的跳转
 wire            less_than;
-
+wire            jump     ;  
 //Data Memory 与 Write Back
 wire [31:0]     memory_read_data;
 wire [31:0]     write_back_data;//用于写回RF
@@ -107,7 +107,10 @@ assign alu_operand_b = alu_src ? immediate : read_data2;
 // Write-Back MUX 根据opcode译出的控制信号 
 // 选择写回RF的数据来源
 assign write_back_data =
-    result_src ? memory_read_data : alu_result;
+    (result_src == 2'b00) ? alu_result :
+    (result_src == 2'b01) ? memory_read_data :
+    (result_src == 2'b10) ? pc_plus4 :
+    32'b0;
 assign less_than = alu_result[0];
 
 pc_reg u_pc_reg(
@@ -135,6 +138,7 @@ main_decoder u_main_decoder(
    .mem_write   (mem_write )        ,
    .result_src  (result_src)        ,
    .branch      (branch    )        ,
+   .jump        (jump      )        ,
    .imm_src     (imm_src   )        ,
    .alu_op      (alu_op    )
 );
@@ -197,6 +201,7 @@ next_pc_logic u_next_pc_logic(
     .branch       (branch       )    ,
     .zero         (zero         )    ,
     .less_than    (less_than    )    ,
+    .jump         (jump         )    ,
     .pc_plus4     (pc_plus4     )    ,
     .branch_target(branch_target)    ,
     .pc_src       (pc_src       )    ,

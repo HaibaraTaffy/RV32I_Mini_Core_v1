@@ -13,7 +13,7 @@
 # //  18 U.S.C. Section 1905.
 # //
 # vsim -gui -voptargs="+acc" work.tb_next_pc_logic 
-# Start time: 14:44:55 on Sep 18,2026
+# Start time: 21:16:58 on Sep 18,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading work.tb_next_pc_logic(fast)
 # Loading work.next_pc_logic(fast)
@@ -25,6 +25,7 @@ sim:/tb_next_pc_logic/branch_target \
 sim:/tb_next_pc_logic/current_pc \
 sim:/tb_next_pc_logic/funct3 \
 sim:/tb_next_pc_logic/immediate \
+sim:/tb_next_pc_logic/jump \
 sim:/tb_next_pc_logic/less_than \
 sim:/tb_next_pc_logic/next_pc \
 sim:/tb_next_pc_logic/pc_plus4 \
@@ -32,14 +33,14 @@ sim:/tb_next_pc_logic/pc_src \
 sim:/tb_next_pc_logic/zero
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: lancelot zhou  Hostname: HAIBARA  ProcessID: 38412
-#           Attempting to use alternate WLF file "./wlft0yc8n4".
+#           Attempting to use alternate WLF file "./wlfttcdqx0".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft0yc8n4
+#           Using alternate file: ./wlfttcdqx0
 run
 run
-# ** Note: $finish    : tb/tb_next_pc_logic.v(106)
-#    Time: 140 ns  Iteration: 0  Instance: /tb_next_pc_logic
+# ** Note: $finish    : tb/tb_next_pc_logic.v(128)
+#    Time: 170 ns  Iteration: 0  Instance: /tb_next_pc_logic
 # 1
-# Break in Module tb_next_pc_logic at tb/tb_next_pc_logic.v line 106
-# End time: 16:47:56 on Sep 18,2026, Elapsed time: 2:03:01
+# Break in Module tb_next_pc_logic at tb/tb_next_pc_logic.v line 128
+# End time: 21:18:02 on Sep 18,2026, Elapsed time: 0:01:04
 # Errors: 0, Warnings: 2

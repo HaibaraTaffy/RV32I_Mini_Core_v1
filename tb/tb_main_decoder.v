@@ -7,8 +7,9 @@ reg  [6:0] opcode;
 wire       reg_write;
 wire       alu_src;
 wire       mem_write;
-wire       result_src;
+wire [1:0] result_src;
 wire       branch;
+wire       jump  ;
 wire [1:0] imm_src;
 wire [1:0] alu_op;
 
@@ -19,6 +20,7 @@ main_decoder dut (
     .mem_write  (mem_write),
     .result_src (result_src),
     .branch     (branch),
+    .jump       (jump),
     .imm_src    (imm_src),
     .alu_op     (alu_op)
 );
@@ -37,6 +39,9 @@ initial begin
     #10;
 
     opcode = 7'b1100011;//BRANCH
+    #10;
+
+    opcode = 7'b1101111;//JUMP
     #10;
 
     opcode = 7'b1111111;//未识别

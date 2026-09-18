@@ -68,8 +68,21 @@ initial begin
     instruction = 32'hFE62_88E3;
     imm_src     = 2'b10;
     #10;
-    //无效imm_src immediate = 0
-    instruction = 32'hFFFF_FFFF;
+    // J-type
+    //0000_0001_0000_0000_0000_0000_1110_1111 instruction
+    
+    //0000_0000_0000_0000_0000_0000_0001_0000 immediate
+    //0000_0010
+
+    instruction = 32'h0100_00EF;
+    imm_src = 2'b11;
+    #10;
+
+    //J-type
+    //1111_1111_0001_1111_1111_0000_1110_1111 instruction
+    //1111_1111_1111_1111_1111_1111_1111_0000 immediate
+    //FFFF_FFF0
+    instruction = 32'hFF1F_F0EF;
     imm_src     = 2'b11;
     #10;
 

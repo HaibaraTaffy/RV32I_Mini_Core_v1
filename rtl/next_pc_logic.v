@@ -32,15 +32,18 @@
 module next_pc_logic (
     input  wire [31:0] current_pc,
     input  wire [31:0] immediate,
+    input  wire [31:0] alu_result,
     input  wire [2:0]  funct3,
     input  wire        branch,
     input  wire        zero,
     input  wire        less_than,  
     input  wire        jump,
+    input  wire        jalr,
 
     output wire [31:0] pc_plus4,
     output wire [31:0] branch_target,
     output wire        pc_src,
+    output wire [31:0] jalr_target,
     output wire [31:0] next_pc
 );
 
@@ -52,6 +55,8 @@ assign pc_plus4 = current_pc + 32'd4;
 assign branch_target = current_pc + immediate;
 //由 funct3 来判断 现在是什么指令 对应的branch条件是什么
 //branch_condition 该看哪个信号
+
+assign jalr_target = {alu_result[31:1],1'b0};
 
 always @(*) begin
     branch_condition = 1'b0;
@@ -79,9 +84,11 @@ always @(*) begin
     endcase
 end
 
-assign pc_src = jump | (branch & branch_condition);
+assign pc_src = jalr | jump | (branch & branch_condition);
 
 assign next_pc =
-    pc_src ? branch_target : pc_plus4;
+    jalr ? jalr_target :
+    pc_src ? branch_target : 
+    pc_plus4;
 
 endmodule

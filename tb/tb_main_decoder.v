@@ -10,6 +10,7 @@ wire       mem_write;
 wire [1:0] result_src;
 wire       branch;
 wire       jump  ;
+wire       jalr  ;
 wire [1:0] imm_src;
 wire [1:0] alu_op;
 
@@ -21,6 +22,7 @@ main_decoder dut (
     .result_src (result_src),
     .branch     (branch),
     .jump       (jump),
+    .jalr       (jalr),
     .imm_src    (imm_src),
     .alu_op     (alu_op)
 );
@@ -41,11 +43,16 @@ initial begin
     opcode = 7'b1100011;//BRANCH
     #10;
 
-    opcode = 7'b1101111;//JUMP
+    opcode = 7'b1101111;//JAL
+    #10;
+
+    opcode = 7'b1100111;//JALR
     #10;
 
     opcode = 7'b1111111;//未识别
     #10;
+
+
                         //仿真全通过
     $finish;
 end

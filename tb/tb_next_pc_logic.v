@@ -4,14 +4,17 @@ module tb_next_pc_logic;
 
 reg  [31:0] current_pc;
 reg  [31:0] immediate;
+reg  [31:0] alu_result;
 reg  [2:0]  funct3;
 reg         branch;
 reg         jump ;
+reg         jalr;
 reg         zero;
 reg         less_than;   
 
 wire [31:0] pc_plus4;
 wire [31:0] branch_target;
+wire [31:0] jalr_target;
 wire        pc_src;
 wire [31:0] next_pc;
 
@@ -20,11 +23,13 @@ next_pc_logic dut (
     .immediate     (immediate),
     .branch        (branch),
     .jump          (jump),
+    .jalr          (jalr),
     .funct3        (funct3),
     .zero          (zero),
     .less_than     (less_than),
     .pc_plus4      (pc_plus4),
     .branch_target (branch_target),
+    .jalr_target   (jalr_target),
     .pc_src        (pc_src),
     .next_pc       (next_pc)
 );
@@ -33,9 +38,11 @@ initial begin
     //初始化
     current_pc = 32'h0000_0000;
     immediate  = 32'h0000_0010;
+    alu_result = 32'h0000_0000;
     funct3     = 3'b000;
     branch     = 1'b0;
     jump       = 1'b0;
+    jalr       = 1'b0;
     zero       = 1'b0;
     less_than  = 1'b0;
     #10;
@@ -123,6 +130,19 @@ initial begin
     jump = 1'b0;
     //jump = 0 next_pc = current_pc + 4 = 32'h0000_0104
     #10;
+
+    current_pc = 32'h0000_0100;
+    branch     = 1'b0;
+    jump       = 1'b0;
+    jalr       = 1'b1;
+    alu_result = 32'h0000_0125;//00..0001_0010_0101
+    #10;//jalr = 1 next_pc = jalr_target = 32'h0000_0124
+
+    alu_result = 32'h0000_0124;
+    #10;//jalr = 1 next_pc = jalr_target = 32'h0000_0124
+
+    jalr = 1'b0;
+    #10;//jalr = 0 next_pc = current_pc + 4 =32'h0000_0104
 
 
     $finish;

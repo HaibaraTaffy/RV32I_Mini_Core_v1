@@ -24,7 +24,9 @@
 //| LOAD   | `0000011` | `lw`                         |
 //| STORE  | `0100011` | `sw`                         |
 //| BRANCH | `1100011` | `beq` `bnq` `blt` `bge`      |   
-//| JUMP   | `1101111` | `jal`                        |
+//| JAL    | `1101111` | `jal`                        |
+//| JALR   | `1100111` | `jalr`                       |
+
 //这些指令 由RISC-V ISA 规定 无法自行修改
 ////////////////////////////////////////////////////////
 
@@ -36,18 +38,20 @@
 //branch        表示是否为条件Branch  0 其他指令              1 是beq指令  注:后续用于生成 PCSrc
 //imm_src       选择ImmGen 使用的格式 00 -> I  01 -> S  10 -> B
 //alu_op        ALU操作类别          00 -> 直接执行ADD 01 -> Branch比较 ALU执行SUB 10 -> 根据f3和f7继续译码 注:并非最终 alu_Control
-//jump          表示是否为 jump      0 否                    1 是
+//jump          表示是否为 jal        0 否                    1 是
+//jalr          表示是否为 jalr       0 否                    1 是
 
 /////////第二版的 Control Table ///////////
-//| 类别     | reg_write | alu_src | mem_write | result_src | branch | imm_src | alu_op | jump |
-//| ------  | --------: | ------: | --------: | ---------:  | -----: | ------: | -----: | ----:|
-//| OP      |         1 |       0 |         0 |          00 |      0 |      00 |     10 |    0 |
-//| OP-IMM  |         1 |       1 |         0 |          00 |      0 |      00 |     00 |    0 |
-//| LOAD    |         1 |       1 |         0 |          01 |      0 |      00 |     00 |    0 |
-//| STORE   |         0 |       1 |         1 |          00 |      0 |      01 |     00 |    0 |
-//| BRANCH  |         0 |       0 |         0 |          00 |      1 |      10 |     01 |    0 |
-//| JUMP    |         1 |       0 |         0 |          10 |      0 |      11 |     00 |    1 |
-//| unknown |         0 |       0 |         0 |          00 |      0 |      00 |     00 |    0 |
+//| 类别     | reg_write | alu_src | mem_write | result_src | branch | imm_src | alu_op | jump | jalr|
+//| ------  | --------: | ------: | --------: | ---------:  | -----: | ------: | -----: | ----:| --: |
+//| OP      |         1 |       0 |         0 |          00 |      0 |      00 |     10 |    0 |   0 |
+//| OP-IMM  |         1 |       1 |         0 |          00 |      0 |      00 |     00 |    0 |   0 |
+//| LOAD    |         1 |       1 |         0 |          01 |      0 |      00 |     00 |    0 |   0 |
+//| STORE   |         0 |       1 |         1 |          00 |      0 |      01 |     00 |    0 |   0 |
+//| BRANCH  |         0 |       0 |         0 |          00 |      1 |      10 |     01 |    0 |   0 |
+//| JAL     |         1 |       0 |         0 |          10 |      0 |      11 |     00 |    1 |   0 |
+//| JALR    |         1 |       1 |         0 |          10 |      0 |      00 |     00 |    0 |   1 |
+//| unknown |         0 |       0 |         0 |          00 |      0 |      00 |     00 |    0 |   0 |
 ////////////////////////////
 
 //注 : 对于OP imm_src 无作用
@@ -62,6 +66,7 @@ module main_decoder(
     output reg                    branch    ,
     output reg      [1:0]         imm_src   ,
     output reg                    jump      ,
+    output reg                    jalr      ,
     output reg      [1:0]         alu_op      
 );
 //7位操作码
@@ -71,6 +76,7 @@ localparam [6:0] OPCODE_LOAD   = 7'b0000011;
 localparam [6:0] OPCODE_STORE  = 7'b0100011;
 localparam [6:0] OPCODE_BRANCH = 7'b1100011;
 localparam [6:0] OPCODE_JUMP   = 7'b1101111;
+localparam [6:0] OPCODE_JALR   = 7'b1100111;
 
 always @(*) begin
     //设置默认值
@@ -80,7 +86,8 @@ always @(*) begin
     result_src= 2'b00;//默认ALU Result 写回RF
     branch    = 1'b0;//默认不是beq指令
     imm_src   = 2'b00;//默认I-type
-    jump      = 1'b0 ;//默认 不跳转
+    jump      = 1'b0 ;//默认 不执行jal
+    jalr      = 1'b0 ;//默认 不执行jalr
     alu_op    = 2'b00;//默认 直接执行ADD
 
     case(opcode)
@@ -120,9 +127,18 @@ always @(*) begin
         OPCODE_JUMP: begin
             reg_write = 1'b1;   //允许写入寄存器
             result_src = 2'b10; //选择 PC+4为写入寄存器的数据
-            jump = 1'b1; //表示 是 Jump类指令
+            jump = 1'b1; //表示 是 jal指令
             imm_src = 2'b11;    //选择 J-type
 
+        end
+        
+        OPCODE_JALR : begin
+            reg_write  = 1'b1; //允许写入寄存器
+            alu_src    = 1'b1; //Operand 2 来自立即数
+            result_src = 2'b10;// 选择PC + 4为写入寄存器的数据
+            imm_src    = 2'b00;//选择 I-type
+            jalr       = 1'b1; //表示 是jalr指令
+            alu_op     = 2'b00;//需要alu计算 直接执行add(算地址)
         end
 
         default: begin

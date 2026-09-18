@@ -29,7 +29,7 @@ module imm_gen(
 localparam [1:0] IMM_I = 2'b00;
 localparam [1:0] IMM_S = 2'b01;
 localparam [1:0] IMM_B = 2'b10;
-localparam [1:0] IMM_J = 2'b10;
+localparam [1:0] IMM_J = 2'b11;
 always @(*) begin
     case (imm_src)//组合逻辑 根据Instruction Format 进而生成32bit Immediate
         IMM_I : begin

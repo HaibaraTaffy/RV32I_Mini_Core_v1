@@ -7,6 +7,10 @@
 //0010 → AND
 //0011 → OR
 //0100 → XOR
+//0101 → SLL
+//0110 → SLT
+//0111 → SRL
+//1000 → SRA
 
 module alu (
     input   wire    [31:0]  operand_a   ,

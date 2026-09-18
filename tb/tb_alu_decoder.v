@@ -62,12 +62,12 @@ initial begin
 
     funct3      = 3'b011;
     funct7_bit5 = 1'b0;
-    #10;//根据f3 f7判断 暂无对应指令 输出默认ALU_AND 0000
+    #10;//根据f3 f7判断 暂无对应指令 输出默认ALU_ADD 0000
 
     alu_op      = 2'b11;
     funct3      = 3'b000;
     funct7_bit5 = 1'b0;
-    #10;//根据op判断 暂无对应指令 输出默认ALU_AND 0000
+    #10;//根据op判断 暂无对应指令 输出默认ALU_ADD 0000
 
     $finish;
     //全部仿真正确

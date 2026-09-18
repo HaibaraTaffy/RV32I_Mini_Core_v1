@@ -68,7 +68,7 @@ initial begin
 
     operand_a   = 32'h0000_0001;
     operand_b   = 32'hFFFF_FFFF;
-    alu_control = 4'b0110;//SLT 小于则置位 result = 0 zero = 0
+    alu_control = 4'b0110;//SLT 小于则置位 result = 0 zero = 1
     #10;
 
     operand_a   = 32'h8000_0000;//1000_00...
@@ -88,7 +88,7 @@ initial begin
 
     operand_a   = 32'h1234_5678;
     operand_b   = 32'h0000_0000;
-    alu_control = 4'b1111;//暂时无意义 进入default result = 0 zero = 0
+    alu_control = 4'b1111;//暂时无意义 进入default result = 0 zero = 1
     #10;
     //仿真通过 结果正确!
     $finish;

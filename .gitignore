@@ -8,6 +8,17 @@ sim/*.wlf
 sim/work/
 sim/xsim.dir/
 
+# ModelSim generated files
+work/
+*.wlf
+wlft*
+transcript
+vsim_stacktrace.vstf
+modelsim.ini
+*.qdb
+*.qpg
+*.qtl
+
 !sim/modelsim/.gitkeep
 
 # FPGA/tool generated files

@@ -21,6 +21,7 @@ wire [31:0] next_pc;
 next_pc_logic dut (
     .current_pc    (current_pc),
     .immediate     (immediate),
+    .alu_result    (alu_result),
     .branch        (branch),
     .jump          (jump),
     .jalr          (jalr),

@@ -53,10 +53,10 @@ reg branch_condition;
 assign pc_plus4 = current_pc + 32'd4;
 
 assign branch_target = current_pc + immediate;
+//jalr_target 由alu算出 这里只是清低位零
+assign jalr_target = {alu_result[31:1],1'b0};
 //由 funct3 来判断 现在是什么指令 对应的branch条件是什么
 //branch_condition 该看哪个信号
-
-assign jalr_target = {alu_result[31:1],1'b0};
 
 always @(*) begin
     branch_condition = 1'b0;

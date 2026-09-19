@@ -20,14 +20,15 @@ n@_opt
 Z3 OL;O;2020.4;71
 R0
 T_opt1
-!s110 1789741683
-V28YWEhG0a@01bK@Mf6Q4K0
+!s110 1789795374
+VdNii_NF3QCYh2h<`g:@KD1
 04 16 4 work tb_next_pc_logic fast 0
-=1-3043d7ebc996-6aad4a73-ce-7794
+=1-3043d7ebc996-6aae1c2d-3c-20dc
 R1
 R2
 n@_opt1
 R3
+R0
 T_opt2
 !s110 1789543925
 VSSWVdOXT3DhM=7z01ciJ@3
@@ -177,23 +178,23 @@ r1
 R9
 R2
 vnext_pc_logic
-!s110 1789741572
+!s110 1789794944
 !i10b 1
-!s100 4PYN4?Q@0Y2fjk3B2^gOI1
+!s100 ?SZ1T?8CLIY48j1fBjTO30
 R5
-I@^:7Qb[Y1ek81z>n8=Q;l2
+I>;EZ:c@9eJc]>B;KlgaOL3
 R0
-w1789741202
+w1789794898
 8rtl/next_pc_logic.v
 Frtl/next_pc_logic.v
-!i122 51
+!i122 55
 L0 32 63
 R6
 R7
 r1
 !s85 0
 31
-!s108 1789741572.000000
+!s108 1789794944.000000
 !s107 rtl/next_pc_logic.v|
 !s90 rtl/next_pc_logic.v|
 !i113 0
@@ -246,23 +247,23 @@ R11
 R9
 R2
 vrv32i_core
-!s110 1789737836
+!s110 1789796145
 !i10b 1
-!s100 jPj0na[=>5hF8?Q55IbB<0
+!s100 [0zBPOb68n=?Xz4=_cT<[2
 R5
-IfGVEz_XQGaKJZk7RUTbo11
+IQ1nV_<`UA^R_dIa:f:K022
 R0
-w1789734226
+w1789796098
 8rtl/rv32i_core.v
 Frtl/rv32i_core.v
-!i122 45
-L0 36 178
+!i122 57
+L0 36 184
 R6
 R7
 r1
 !s85 0
 31
-!s108 1789737836.000000
+!s108 1789796145.000000
 !s107 rtl/rv32i_core.v|
 !s90 rtl/rv32i_core.v|
 !i113 0
@@ -407,23 +408,23 @@ r1
 R9
 R2
 vtb_next_pc_logic
-!s110 1789741585
+!s110 1789795323
 !i10b 1
-!s100 FNgSl0b?;^8eUCegGak[@1
+!s100 hGjLUQ4^23DOV2Ob6j32T3
 R5
-IKh^MHURNdemzOlFb8hn7n3
+IWO>YdFRDMK@GB;mFO79Zm2
 R0
-w1789741537
+w1789795299
 8tb/tb_next_pc_logic.v
 Ftb/tb_next_pc_logic.v
-!i122 52
-L0 3 149
+!i122 56
+L0 3 150
 R6
 R7
 r1
 !s85 0
 31
-!s108 1789741584.000000
+!s108 1789795323.000000
 !s107 tb/tb_next_pc_logic.v|
 !s90 tb/tb_next_pc_logic.v|
 !i113 0

@@ -4,13 +4,26 @@ add wave sim:/tb_rv32i_core/rst
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/pc
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/instruction
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/next_pc
+add wave -radix hexadecimal sim:/tb_rv32i_core/dut/pc_plus4
 
 add wave -divider {Instruction Fields}
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/opcode
+add wave -radix binary sim:/tb_rv32i_core/dut/funct3
 add wave -radix unsigned sim:/tb_rv32i_core/dut/rs1
 add wave -radix unsigned sim:/tb_rv32i_core/dut/rs2
 add wave -radix unsigned sim:/tb_rv32i_core/dut/rd
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/immediate
+
+add wave -divider {Main Control}
+add wave sim:/tb_rv32i_core/dut/reg_write
+add wave sim:/tb_rv32i_core/dut/alu_src
+add wave sim:/tb_rv32i_core/dut/mem_write
+add wave -radix binary sim:/tb_rv32i_core/dut/result_src
+add wave sim:/tb_rv32i_core/dut/branch
+add wave sim:/tb_rv32i_core/dut/jump
+add wave sim:/tb_rv32i_core/dut/jalr
+add wave -radix binary sim:/tb_rv32i_core/dut/imm_src
+add wave -radix binary sim:/tb_rv32i_core/dut/alu_op
 
 add wave -divider {Register File and ALU}
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/read_data1
@@ -27,9 +40,7 @@ add wave -radix hexadecimal sim:/tb_rv32i_core/dut/write_back_data
 add wave sim:/tb_rv32i_core/dut/reg_write_enable
 add wave sim:/tb_rv32i_core/dut/mem_write_enable
 
-add wave -divider {MUX and Branch Control}
-add wave sim:/tb_rv32i_core/dut/alu_src
-add wave sim:/tb_rv32i_core/dut/result_src
-add wave sim:/tb_rv32i_core/dut/branch
+add wave -divider {Next-PC Control}
 add wave sim:/tb_rv32i_core/dut/pc_src
 add wave -radix hexadecimal sim:/tb_rv32i_core/dut/branch_target
+add wave -radix hexadecimal sim:/tb_rv32i_core/dut/jalr_target

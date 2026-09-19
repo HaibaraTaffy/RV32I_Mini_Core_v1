@@ -47,7 +47,7 @@ module rv32i_core #(
 wire [31:0] pc; 
 wire [31:0] next_pc;
 wire [31:0] pc_plus4;
-wire [31:0] branch_target;
+wire [31:0] branch_target;//
 wire [31:0] jalr_target;
 wire [31:0] instruction;
 
